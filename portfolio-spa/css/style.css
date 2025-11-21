@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;  /* Kutu elemanlarını kolayca hesaplamak için kullandım yoksa boyutlarda sıkıntı yaşanabiliyor */
+    box-sizing: border-box;  /* Kutu elemanlarını kolayca hesaplamak için kullandım yoksa boyutlarda sıkıntı yaşanabiliyor. */
 }
 
 body {
@@ -22,6 +22,9 @@ body {
 /* 
 -webkit-backdrop-filter/clip bazı tarayıcılarda hata verme olasılığından dolayı eski tarz olarak da kullandım.
 Hata verdiğinden dolayı backdrop-filterı da ekledim.
+Bu kısım css'de hep flexbox yapısını kullandım ve diğer kısımlarda da kullanmaya devam edeceğim.
+Daha responsive yapıda olabilmesi için pikselleri rem olarak ayarladım ki ileride sıkıntı olmasın çünkü şuan burada yaptıklarım yüksek ihtimalle
+bu kodları değiştireceğim.
 */
 
 header {
@@ -91,4 +94,62 @@ header {
 .nav-links a:hover::before {
     width: 100%;
 }
+
+
+
+/* ----------------- GENEL ŞABLON  İÇİN CSS KISMI ----------------- */
+
+/* ANA İÇERİK */
+main {
+    padding-top: 100px;
+    min-height: 85vh;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* FOOTER */
+footer {
+    background: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    border-top: 3px solid #667eea;
+    margin-top: 4rem;
+}
+
+footer p {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.socials a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+    border: 2px solid #667eea;
+    border-radius: 25px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.9rem;
+}
+
+.socials a:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
 
