@@ -51,20 +51,22 @@ const pages = {
             <h2>İletişim</h2>
             <p>Projeleriniz veya sorularınız için aşağıdaki formu kullanabilirsiniz.</p>
             
-            <form id="contact-form" style="margin-top: 2rem;">
-                <div style="margin-bottom: 1.5rem;">
-                    <label style="display:block; margin-bottom:0.5rem; font-weight:600;">Adınız Soyadınız</label>
-                    <input type="text" id="name" required style="width:100%; padding:1rem; border-radius:10px; border:1px solid #ddd; outline:none;">
+            <form id="contact-form" style="margin-top: 2rem;" novalidate>
+                <div class="form-group">
+                    <label for="name">Adınız Soyadınız</label>
+                    <input type="text" id="name" placeholder="Örn: Enes Yel">
+                    <small class="error-text"></small> </div>
+                
+                <div class="form-group">
+                    <label for="email">E-posta Adresiniz</label>
+                    <input type="email" id="email" placeholder="Örn: enes@sakarya.edu.tr">
+                    <small class="error-text"></small>
                 </div>
                 
-                <div style="margin-bottom: 1.5rem;">
-                    <label style="display:block; margin-bottom:0.5rem; font-weight:600;">E-posta Adresiniz</label>
-                    <input type="email" id="email" required style="width:100%; padding:1rem; border-radius:10px; border:1px solid #ddd; outline:none;">
-                </div>
-                
-                <div style="margin-bottom: 1.5rem;">
-                    <label style="display:block; margin-bottom:0.5rem; font-weight:600;">Mesajınız</label>
-                    <textarea id="message" rows="5" required style="width:100%; padding:1rem; border-radius:10px; border:1px solid #ddd; outline:none; font-family:inherit;"></textarea>
+                <div class="form-group">
+                    <label for="message">Mesajınız</label>
+                    <textarea id="message" rows="5" placeholder="En az 10 karakter yazmalısınız..."></textarea>
+                    <small class="error-text"></small>
                 </div>
                 
                 <button type="submit" class="btn" style="width:100%;">Gönder</button>

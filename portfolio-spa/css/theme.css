@@ -134,6 +134,26 @@ body.dark-mode .theme-btn {
     box-shadow: 0 0 15px rgba(244, 162, 97, 0.2);
 }
 
+/*FILTER kısmı*/ 
+body.dark-mode .filter-btn {
+    border-color: #f4a261;
+    color: #f4a261;
+}
+
+body.dark-mode .filter-btn.active {
+    background: #f4a261;
+    color: #1e293b; /* Yazı koyu olsun okunsun */
+}
+
+body.dark-mode .filter-btn:hover {
+    background: rgba(244, 162, 97, 0.1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     body.dark-mode .nav-links {

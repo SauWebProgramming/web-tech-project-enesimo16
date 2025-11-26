@@ -4,13 +4,15 @@
       "title": "Kule Savunma Oyunu",
       "description": "C# ve Windows Forms kullanilarak geliştirilen strateji tabanli masaüstü oyunu. Nesne Yönelimli Programlama (OOP) prensipleri etkin bir şekilde kullanılmıştır.",
       "image": "https://via.placeholder.com/400x250/667eea/ffffff?text=Tower+Defense",
-      "link": "#"
+      "link": "#",
+      "category": "masaustu"
     },
     {
       "id": 2,
       "title": "SPA Portfolyo Sitesi",
       "description": "HTML5, CSS3 ve Modern JavaScript (ES6+) ile geliştirilen Tek Sayfa Uygulamasi (SPA). Fetch API ve Routing yapisi içerir.",
       "image": "https://via.placeholder.com/400x250/764ba2/ffffff?text=Portfolio+SPA",
-      "link": "#"
+      "link": "#",
+      "category": "web"
     }
 ]

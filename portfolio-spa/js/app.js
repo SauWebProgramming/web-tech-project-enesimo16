@@ -47,21 +47,32 @@ document.addEventListener('DOMContentLoaded', () => {
 // BURADA FETCH İLE projects.json DOSYASINI ÇEKİP PROJELERİ YÜKLEYECEĞİZ.
 async function loadProjects() {
     const appContainer = document.getElementById('app-container');
-    
-    appContainer.innerHTML = '<h2 style="text-align:center;">Projeler Yükleniyor...</h2>'; 
+    appContainer.innerHTML = '<h2 style="text-align:center;">Projeler Yükleniyor...</h2>';
 
     try {
         const response = await fetch('./data/projects.json');
         const projects = await response.json();
 
-        let html = '<h2>Projelerim</h2><div class="projects-grid">';
+        // 1. Filtre Butonları HTML'i
+        let html = `
+            <h2>Projelerim</h2>
+            
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">Tümü</button>
+                <button class="filter-btn" data-filter="web">Web Projeleri</button>
+                <button class="filter-btn" data-filter="masaustu">Masaüstü / Oyun</button>
+            </div>
+
+            <div class="projects-grid">
+        `;
         
+        // 2. Proje Kartlarını Oluştur (data-category özniteliği ekledik)
         projects.forEach(proj => {
             html += `
-                <article class="project-card">
+                <article class="project-card" data-category="${proj.category}">
                     <img src="${proj.image}" alt="${proj.title}" style="width:100%; height:200px; object-fit:cover; border-radius:10px; margin-bottom:1rem;">
                     <h3 style="margin-bottom:0.5rem;">${proj.title}</h3>
-                    <p style="color:#555; margin-bottom:1rem; font-size:0.95rem;">${proj.description}</p>
+                    <p style="color: inherit; opacity: 0.8; margin-bottom:1rem; font-size:0.95rem;">${proj.description}</p>
                     <a href="${proj.link}" class="btn" style="padding:0.5rem 1.5rem; font-size:0.9rem;">İncele</a>
                 </article>
             `;
@@ -70,21 +81,39 @@ async function loadProjects() {
         html += '</div>';
         appContainer.innerHTML = html;
 
+        // 3. Filtreleme Olaylarını (Event Listeners) Başlat
+        setupFilters();
+
     } catch (err) {
         console.error(err);
-        appContainer.innerHTML = '<h3 style="color:red; text-align:center;">HATAHATAHATAHATAHATA</h3>';
+        appContainer.innerHTML = '<h3 style="color:red; text-align:center;">Projeler yüklenirken hata oluştu.</h3>';
     }
 }
 
-// İLETİŞİM BUTONU İŞLEMLERİ DEVAMI
-function setupContactForm() {
-    const form = document.getElementById('contact-form');
-    if(form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const msgDiv = document.getElementById('form-message');
-            msgDiv.innerHTML = '<div style="background:#d4edda; color:#155724; padding:1rem; border-radius:10px; margin-top:1rem; text-align:center;">Mesajınız başarıyla gönderildi! (Demo)</div>';
-            form.reset();
+// Filtre Butonları İçin Yardımcı Fonksiyon
+function setupFilters() {
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.project-card');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // A) Aktif buton sınıfını değiştir
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // B) Kartları filtrele
+            const filterValue = btn.getAttribute('data-filter');
+
+            cards.forEach(card => {
+                if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                    card.style.display = 'block'; // Göster
+                    // Küçük bir animasyon efekti (isteğe bağlı)
+                    card.style.animation = 'fadeIn 0.5s ease';
+                } else {
+                    card.style.display = 'none'; // Gizle
+                }
+            });
         });
-    }
+    });
 }
+
