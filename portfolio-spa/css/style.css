@@ -254,3 +254,22 @@ footer p {
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
 }
+
+
+
+/* --- SCROLL REVEAL (Kaydırma Animasyonları) --- */
+
+/* 1. Başlangıç Durumu (Gizli) */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px); /* 30px aşağıda başlasın */
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); /* Yumuşak geçiş */
+    filter: blur(5px); /* Hafif bulanık başlasın */
+}
+
+/* 2. Aktif Durumu (Görünür) */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0); /* Yerine gelsin */
+    filter: blur(0); /* Netleşsin */
+}

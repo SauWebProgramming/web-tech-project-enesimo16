@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo(0, 0); // Sayfa yüklenince dinamik olabilmesi için en üste gitmesi gerek bu yüzden pencereyi en yukarıya kaydırıyoruz.
 
         if (pageName === 'iletisim') setupContactForm(); // İletişim butonunda iletişim sekmesi kullanımı için.
+
+        setTimeout(initScrollReveal, 100); // Yeni içerik yüklendiğinde Scroll Reveal'ı yeniden başlat.
     }
 
     // URL değişince router çalışsın
@@ -66,10 +68,11 @@ async function loadProjects() {
             <div class="projects-grid">
         `;
         
-        // 2. Proje Kartlarını Oluştur (data-category özniteliği ekledik)
+        // 2. Proje Kartlarını Oluştur
         projects.forEach(proj => {
+            // DİKKAT: class kısmına 'reveal' ekledik!
             html += `
-                <article class="project-card" data-category="${proj.category}">
+                <article class="project-card reveal" data-category="${proj.category}">
                     <img src="${proj.image}" alt="${proj.title}" style="width:100%; height:200px; object-fit:cover; border-radius:10px; margin-bottom:1rem;">
                     <h3 style="margin-bottom:0.5rem;">${proj.title}</h3>
                     <p style="color: inherit; opacity: 0.8; margin-bottom:1rem; font-size:0.95rem;">${proj.description}</p>
@@ -81,7 +84,10 @@ async function loadProjects() {
         html += '</div>';
         appContainer.innerHTML = html;
 
-        // 3. Filtreleme Olaylarını (Event Listeners) Başlat
+        // 3. İçerik geldikten hemen sonra animasyonları başlat
+        initScrollReveal(); 
+
+        // 4. Filtreleme Olaylarını Başlat
         setupFilters();
 
     } catch (err) {
@@ -125,3 +131,24 @@ if ('serviceWorker' in navigator) {
     });
 }
 
+
+
+// --- SCROLL REVEAL (Gözlemci API) ---
+function initScrollReveal() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            // Eğer eleman ekranda görünüyorsa
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active'); // Animasyonu başlat
+                observer.unobserve(entry.target); // Bir kere çalışsın, sürekli izlemesin (Performans)
+            }
+        });
+    }, {
+        threshold: 0.1 // Elemanın %10'u ekrana girince tetikle
+    });
+
+    // .reveal sınıfına sahip TÜM elemanları bul ve takibe al
+    document.querySelectorAll('.reveal').forEach((el) => {
+        observer.observe(el);
+    });
+}
