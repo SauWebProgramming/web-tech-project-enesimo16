@@ -97,23 +97,31 @@ function setupFilters() {
 
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
-            // A) Aktif buton sınıfını değiştir
+
             buttons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
-            // B) Kartları filtrele
             const filterValue = btn.getAttribute('data-filter');
 
             cards.forEach(card => {
                 if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
                     card.style.display = 'block'; // Göster
-                    // Küçük bir animasyon efekti (isteğe bağlı)
                     card.style.animation = 'fadeIn 0.5s ease';
                 } else {
                     card.style.display = 'none'; // Gizle
                 }
             });
         });
+    });
+}
+
+
+// PWA SERVICE WORKER KAYDI KISMI
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./pwa-sw.js')
+            .then(reg => console.log('PWA Başarıyla Kaydedildi:', reg.scope))
+            .catch(err => console.log('PWA Kayıt Hatası:', err));
     });
 }
 
