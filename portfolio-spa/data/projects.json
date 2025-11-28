@@ -5,7 +5,7 @@
     "title_en": "Tower Defense Game",
     "description": "C# ve Windows Forms kullanılarak geliştirilen strateji tabanlı masaüstü oyunu. Nesne Yönelimli Programlama (OOP) prensipleri etkin bir şekilde kullanılmıştır.",
     "description_en": "Strategy-based desktop game developed using C# and Windows Forms. Object-Oriented Programming (OOP) principles were used effectively.",
-    "image": "https://via.placeholder.com/400x250/667eea/ffffff?text=Tower+Defense",
+    "image": "assets/img/towerdefensegame.png",
     "link": "#",
     "category": "masaustu"
   },
@@ -15,7 +15,7 @@
     "title_en": "SPA Portfolio Website",
     "description": "HTML5, CSS3 ve Modern JavaScript (ES6+) ile geliştirilen Tek Sayfa Uygulaması (SPA). Fetch API ve Routing yapısı içerir.",
     "description_en": "Single Page Application (SPA) developed with HTML5, CSS3, and Modern JavaScript (ES6+). Includes Fetch API and Routing structure.",
-    "image": "https://via.placeholder.com/400x250/764ba2/ffffff?text=Portfolio+SPA",
+    "image": "assets/img/spaportfolyo.png",
     "link": "#",
     "category": "web"
   }

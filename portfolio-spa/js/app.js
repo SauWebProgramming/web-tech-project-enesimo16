@@ -100,9 +100,10 @@ async function loadProjects() {
             const title = currentLang === 'en' ? proj.title_en : proj.title;
             const desc = currentLang === 'en' ? proj.description_en : proj.description;
 
+            // Performans için resimlere lazy loading ekledik.
             html += `
                 <article class="project-card reveal" data-category="${proj.category}">
-                    <img src="${proj.image}" alt="${title}" style="width:100%; height:200px; object-fit:cover; border-radius:10px; margin-bottom:1rem;">
+                    <img src="${proj.image}" alt="${title}" style="width:100%; height:200px; object-fit:cover; border-radius:10px; margin-bottom:1rem;" loading="lazy"> 
                     <h3 style="margin-bottom:0.5rem;">${title}</h3>
                     <p style="color: inherit; opacity: 0.8; margin-bottom:1rem; font-size:0.95rem;">${desc}</p>
                     <a href="${proj.link}" class="btn" style="padding:0.5rem 1.5rem; font-size:0.9rem;">${txtBtn}</a>
