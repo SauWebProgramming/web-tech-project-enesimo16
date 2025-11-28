@@ -67,6 +67,27 @@
     box-shadow: -10px 0 30px rgba(102, 126, 234, 0.4);
 }
 
+/* Dil Butonları */
+.lang-btn {
+    background: transparent;
+    border: 2px solid #667eea;
+    border-radius: 8px; 
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #667eea;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: #667eea;
+    color: white;
+}
+
+
 /* Dark mode - dark kısmı */
 
 body.dark-mode {
@@ -132,6 +153,17 @@ body.dark-mode .theme-btn {
     border-color: #f4a261; 
     color: #f4a261;       
     box-shadow: 0 0 15px rgba(244, 162, 97, 0.2);
+}
+
+/* DIL BUTONLARI dark-mode kısmı*/
+body.dark-mode .lang-btn {
+    border-color: #f4a261;
+    color: #f4a261;
+}
+
+body.dark-mode .lang-btn:hover {
+    background: #f4a261;
+    color: #1e293b;
 }
 
 /*FILTER kısmı*/ 

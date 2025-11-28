@@ -1,18 +1,22 @@
 [
-    {
-      "id": 1,
-      "title": "Kule Savunma Oyunu",
-      "description": "C# ve Windows Forms kullanilarak geliştirilen strateji tabanli masaüstü oyunu. Nesne Yönelimli Programlama (OOP) prensipleri etkin bir şekilde kullanılmıştır.",
-      "image": "https://via.placeholder.com/400x250/667eea/ffffff?text=Tower+Defense",
-      "link": "#",
-      "category": "masaustu"
-    },
-    {
-      "id": 2,
-      "title": "SPA Portfolyo Sitesi",
-      "description": "HTML5, CSS3 ve Modern JavaScript (ES6+) ile geliştirilen Tek Sayfa Uygulamasi (SPA). Fetch API ve Routing yapisi içerir.",
-      "image": "https://via.placeholder.com/400x250/764ba2/ffffff?text=Portfolio+SPA",
-      "link": "#",
-      "category": "web"
-    }
+  {
+    "id": 1,
+    "title": "Kule Savunma Oyunu",
+    "title_en": "Tower Defense Game",
+    "description": "C# ve Windows Forms kullanılarak geliştirilen strateji tabanlı masaüstü oyunu. Nesne Yönelimli Programlama (OOP) prensipleri etkin bir şekilde kullanılmıştır.",
+    "description_en": "Strategy-based desktop game developed using C# and Windows Forms. Object-Oriented Programming (OOP) principles were used effectively.",
+    "image": "https://via.placeholder.com/400x250/667eea/ffffff?text=Tower+Defense",
+    "link": "#",
+    "category": "masaustu"
+  },
+  {
+    "id": 2,
+    "title": "SPA Portfolyo Sitesi",
+    "title_en": "SPA Portfolio Website",
+    "description": "HTML5, CSS3 ve Modern JavaScript (ES6+) ile geliştirilen Tek Sayfa Uygulaması (SPA). Fetch API ve Routing yapısı içerir.",
+    "description_en": "Single Page Application (SPA) developed with HTML5, CSS3, and Modern JavaScript (ES6+). Includes Fetch API and Routing structure.",
+    "image": "https://via.placeholder.com/400x250/764ba2/ffffff?text=Portfolio+SPA",
+    "link": "#",
+    "category": "web"
+  }
 ]
