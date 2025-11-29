@@ -7,17 +7,17 @@ const pages = {
     // türkçe
     tr: {
         anasayfa: `
-            <section class="home-section reveal" style="text-align:center; padding: 4rem 0;">
+            <section class="home-section reveal text-center py-4">
                 <h1>Merhaba, Ben Enes Yel</h1>
-                <h2 style="min-height: 1.5em; font-size: 1.2rem; color: #667eea; font-weight: 600;">
+                <h2 class="typewriter-wrapper">
                     <span class="txt-type" data-wait="2000" data-words='["Bilişim Sistemleri Mühendisliği Öğrencisi", "Web Geliştirici", "Teknoloji Tutkunu"]'></span>
                 </h2>
                 <br>
-                <small style="display:block; margin-bottom:10px; color:#667eea; font-weight:bold;">B23120053</small>
-                <p style="opacity: 0.8;">Web Teknolojileri | Backend Development | Mechanical | Hardware</p>
+                <small class="student-id">B23120053</small>
+                <p class="subtitle">Web Teknolojileri | Backend Development | Mechanical | Hardware</p>
                 <br>
                 <a href="#projelerim" class="btn">Projelerimi İncele</a>
-                <a href="#iletisim" class="btn" style="background: transparent; border: 2px solid #667eea; color: #667eea; margin-left: 10px;">Bana Ulaş</a>
+                <a href="#iletisim" class="btn btn-outline">Bana Ulaş</a>
             </section>
         `,
         hakkimda: `
@@ -35,14 +35,14 @@ const pages = {
             </section>
         `,
         iletisim: `
-            <section class="contact-section reveal" style="max-width: 600px; margin: 0 auto;">
+            <section class="contact-section reveal mx-auto-600">
                 <h2>İletişim</h2>
                 <p>Sorularınız için aşağıdaki formu kullanabilirsiniz.</p>
-                <form id="contact-form" style="margin-top: 2rem;" novalidate>
+                <form id="contact-form" class="mt-2" novalidate>
                     <div class="form-group"><label>Adınız Soyadınız</label><input type="text" id="name" placeholder="Örn: Enes Yel"><small class="error-text"></small></div>
                     <div class="form-group"><label>E-posta</label><input type="email" id="email" placeholder="Örn: enes@sakarya.edu.tr"><small class="error-text"></small></div>
                     <div class="form-group"><label>Mesajınız</label><textarea id="message" rows="5" placeholder="En az 10 karakter..."></textarea><small class="error-text"></small></div>
-                    <button type="submit" class="btn" style="width:100%;">Gönder</button>
+                    <button type="submit" class="btn w-100">Gönder</button>
                 </form>
                 <div id="form-message"></div>
             </section>
@@ -52,17 +52,17 @@ const pages = {
     // english
     en: {
         anasayfa: `
-            <section class="home-section reveal" style="text-align:center; padding: 4rem 0;">
+            <section class="home-section reveal text-center py-4">
                 <h1>Hello, I'm Enes Yel</h1>
-                <h2 style="min-height: 1.5em; font-size: 1.2rem; color: #667eea; font-weight: 600;">
+                <h2 class="typewriter-wrapper">
                     <span class="txt-type" data-wait="2000" data-words='["ISE Student", "Web Developer", "Tech Enthusiast"]'></span>
                 </h2>
                 <br>
-                <small style="display:block; margin-bottom:10px; color:#667eea; font-weight:bold;">B23120053</small>
-                <p style="opacity: 0.8;">Web Technologies | Backend Development | Mechanical | Hardware</p>
+                <small class="student-id">B23120053</small>
+                <p class="subtitle">Web Technologies | Backend Development | Mechanical | Hardware</p>
                 <br>
                 <a href="#projelerim" class="btn">View Projects</a>
-                <a href="#iletisim" class="btn" style="background: transparent; border: 2px solid #667eea; color: #667eea; margin-left: 10px;">Contact Me</a>
+                <a href="#iletisim" class="btn btn-outline">Contact Me</a>
             </section>
         `,
         hakkimda: `
@@ -80,14 +80,14 @@ const pages = {
             </section>
         `,
         iletisim: `
-            <section class="contact-section reveal" style="max-width: 600px; margin: 0 auto;">
+            <section class="contact-section reveal mx-auto-600">
                 <h2>Contact</h2>
                 <p>You can use the form below for your questions.</p>
-                <form id="contact-form" style="margin-top: 2rem;" novalidate>
+                <form id="contact-form" class="mt-2" novalidate>
                     <div class="form-group"><label>Full Name</label><input type="text" id="name" placeholder="Ex: Dilek Yel"><small class="error-text"></small></div>
                     <div class="form-group"><label>Email</label><input type="email" id="email" placeholder="Ex: dilek16@email.com"><small class="error-text"></small></div>
                     <div class="form-group"><label>Message</label><textarea id="message" rows="5" placeholder="At least 10 characters..."></textarea><small class="error-text"></small></div>
-                    <button type="submit" class="btn" style="width:100%;">Send Message</button>
+                    <button type="submit" class="btn w-100">Send Message</button>
                 </form>
                 <div id="form-message"></div>
             </section>

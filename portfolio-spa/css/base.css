@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  /* Kutu elemanlarını kolayca hesaplamak için kullandım yoksa boyutlarda sıkıntı yaşanabiliyor. */
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.7;
+    color: #2c3e50;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* ----------------- GENEL ŞABLON  İÇİN CSS KISMI ----------------- */
+
+/* ANA İÇERİK */
+main {
+    padding-top: 100px;
+    min-height: 85vh;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ----------------- APP CONTAİNER  İÇİN CSS KISMI ----------------- */
+
+#app-container {
+    background: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Başlıklar */
+#app-container h1,
+#app-container h2 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+}
+
+#app-container h1 {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+}
+
+#app-container h2 {
+    font-size: 2rem;
+    margin-top: 2.5rem;
+}
+
+#app-container p {
+    color: #34495e;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+}

@@ -1,0 +1,85 @@
+/* İleride kullanılacak card css kısmı, değiştirilebilir. */
+.project-card,
+.skill-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border: 2px solid transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover,
+.skill-card:hover {
+    transform: translateY(-8px);
+    border-color: #667eea;
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.25);
+}
+
+/* Grid kullanılarak kolaylaştırıldı hem de projede grid de kullanmış olmak için kullandım. */
+.projects-grid,
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Butonlar */
+.btn {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+
+/* pages.js inline satırları düzeltme */
+
+.text-center { text-align: center; }
+.py-4 { padding: 4rem 0; }
+.mt-2 { margin-top: 2rem; }
+.w-100 { width: 100%; }
+.mx-auto-600 { max-width: 600px; margin: 0 auto; }
+
+.typewriter-wrapper {
+    min-height: 1.5em;
+    font-size: 1.2rem;
+    color: #667eea;
+    font-weight: 600;
+}
+
+.student-id {
+    display: block;
+    margin-bottom: 10px;
+    color: #667eea;
+    font-weight: bold;
+}
+
+.subtitle { opacity: 0.8; }
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #667eea;
+    color: #667eea;
+    margin-left: 10px;
+}
+
+.btn-outline:hover {
+    background: #667eea;
+    color: white;
+}
