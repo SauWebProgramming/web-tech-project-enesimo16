@@ -58,23 +58,31 @@ document.addEventListener('DOMContentLoaded', () => {
         if (pageName === 'iletisim') setupContactForm(); // İletişim butonunda iletişim sekmesi kullanımı için.
 
         setTimeout(initScrollReveal, 100); // Yeni içerik yüklendiğinde Scroll Reveal'ı yeniden başlat.
+
+        startTypeWriterSafe(); // Yeni içerik yüklendiğinde TypeWriter'ı yeniden başlat. Alttaki fonksiyonu çağırıyoruz.
     }
 
     // Typewriter Başlatma.
-    setTimeout(() => {
+    // Typewriter kodu değiştirildi çünkü öncekinde bazı durumlarda TypeWriter sınıfı henüz yüklenmemiş olabiliyordu ve bundan kaynaklı yazı çıkmıyordu veya çıkamayabiliyordu.
+    // Bu hali ile önce 1. elemanın yüklendiğinden emin oluyoruz, eğer yok ise 50ms aralıklarla 20 kere deniyor, 20 kere de bulamazsa vazgeçiyor.
+    function startTypeWriterSafe(attempts = 0) {
         const txtElement = document.querySelector('.txt-type');
+        
         if (txtElement) {
-            const wordsAttr = txtElement.getAttribute('data-words');
-            const waitAttr = txtElement.getAttribute('data-wait');
-            
-            if (wordsAttr && waitAttr) {
-                // Temiz bir başlangıç için (varsa) eski içeriği temizleyebiliriz ama
-                // sınıf yapımız zaten innerHTML'i güncelliyor.
-                const words = JSON.parse(wordsAttr);
-                new TypeWriter(txtElement, words, waitAttr);
+            if (typeof TypeWriter !== 'undefined') {
+                const wordsAttr = txtElement.getAttribute('data-words');
+                const waitAttr = txtElement.getAttribute('data-wait');
+                
+                if (wordsAttr && waitAttr) {
+                    new TypeWriter(txtElement, JSON.parse(wordsAttr), waitAttr);
+                }
+            }
+        } else {
+            if (attempts < 20) {
+                setTimeout(() => startTypeWriterSafe(attempts + 1), 50);
             }
         }
-    }, 200);
+    }
 
     // URL değişince router çalışsın
     window.addEventListener('hashchange', router);
