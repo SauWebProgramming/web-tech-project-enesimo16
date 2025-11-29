@@ -2,13 +2,16 @@ const pages = {
     // 1. olarak sayfa içerikleri tasarlanmıştı.
     // 2. olarak reveal eklenmişti.
     // Şuan ise 3. olarak çoklu dil desteği eklendi.
+    // TypeWriter eklendi.
 
     // türkçe
     tr: {
         anasayfa: `
             <section class="home-section reveal" style="text-align:center; padding: 4rem 0;">
                 <h1>Merhaba, Ben Enes Yel</h1>
-                <p>Sakarya Üniversitesi Bilişim Sistemleri Mühendisliği Öğrencisi</p>
+                <h2 style="min-height: 1.5em; font-size: 1.2rem; color: #667eea; font-weight: 600;">
+                    <span class="txt-type" data-wait="2000" data-words='["Bilişim Sistemleri Mühendisliği Öğrencisi", "Web Geliştirici", "Teknoloji Tutkunu"]'></span>
+                </h2>
                 <br>
                 <small style="display:block; margin-bottom:10px; color:#667eea; font-weight:bold;">B23120053</small>
                 <p style="opacity: 0.8;">Web Teknolojileri | Backend Development | Mechanical | Hardware</p>
@@ -51,7 +54,9 @@ const pages = {
         anasayfa: `
             <section class="home-section reveal" style="text-align:center; padding: 4rem 0;">
                 <h1>Hello, I'm Enes Yel</h1>
-                <p>Information Systems Engineering Student at Sakarya University</p>
+                <h2 style="min-height: 1.5em; font-size: 1.2rem; color: #667eea; font-weight: 600;">
+                    <span class="txt-type" data-wait="2000" data-words='["ISE Student", "Web Developer", "Tech Enthusiast"]'></span>
+                </h2>
                 <br>
                 <small style="display:block; margin-bottom:10px; color:#667eea; font-weight:bold;">B23120053</small>
                 <p style="opacity: 0.8;">Web Technologies | Backend Development | Mechanical | Hardware</p>
