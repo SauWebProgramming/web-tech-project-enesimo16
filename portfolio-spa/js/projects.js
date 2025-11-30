@@ -53,6 +53,7 @@ async function loadProjects() {
         // Filtreleme Olaylarını Başlat
         setupFilters();
 
+
     } catch (err) {
         console.error(err);
         const errorText = currentLang === 'en' ? 'Error loading projects.' : 'Projeler yüklenirken hata oluştu.';

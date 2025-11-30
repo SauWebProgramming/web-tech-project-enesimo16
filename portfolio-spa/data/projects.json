@@ -16,6 +16,16 @@
     "description": "HTML5, CSS3 ve Modern JavaScript (ES6+) ile geliştirilen Tek Sayfa Uygulaması (SPA). Fetch API ve Routing yapısı içerir.",
     "description_en": "Single Page Application (SPA) developed with HTML5, CSS3, and Modern JavaScript (ES6+). Includes Fetch API and Routing structure.",
     "image": "assets/img/spaportfolyo.png",
+    "link": "https://github.com/SauWebProgramming/web-tech-project-enesimo16",
+    "category": "web"
+  },
+  {
+    "id": 3,
+    "title": "DENEME",
+    "title_en": "SPA Portfolio Website",
+    "description": "HTML5, CSS3 ve Modern JavaScript (ES6+) ile geliştirilen Tek Sayfa Uygulaması (SPA). Fetch API ve Routing yapısı içerir.",
+    "description_en": "Single Page Application (SPA) developed with HTML5, CSS3, and Modern JavaScript (ES6+). Includes Fetch API and Routing structure.",
+    "image": "",
     "link": "#",
     "category": "web"
   }

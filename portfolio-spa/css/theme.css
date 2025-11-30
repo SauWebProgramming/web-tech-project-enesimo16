@@ -96,6 +96,7 @@
 }
 
 
+
 /* Dark mode - dark kısmı */
 
 body.dark-mode {
@@ -211,4 +212,22 @@ body.dark-mode .txt-type > .txt-cursor {
     0% { opacity: 0; }
     50% { opacity: 1; }
     100% { opacity: 0; }
+}
+
+
+
+/* --- AKTİF LİNK DURUMU (Hangi Sayfadayız?) --- */
+.nav-links a.active-link {
+    color: #667eea; /* Mor renk */
+    font-weight: bold;
+}
+
+/* Altındaki çizgiyi tam boy yap */
+.nav-links a.active-link::before {
+    width: 100%;
+}
+
+/* Dark Modda Aktif Link Rengi */
+body.dark-mode .nav-links a.active-link {
+    color: #f4a261; /* Turuncu */
 }

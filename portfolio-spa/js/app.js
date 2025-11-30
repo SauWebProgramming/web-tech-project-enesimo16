@@ -55,6 +55,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         window.scrollTo(0, 0); // Sayfa yüklenince dinamik olabilmesi için en üste gitmesi gerek bu yüzden pencereyi en yukarıya kaydırıyoruz.
 
+
+
+        // Hangi menüde olduğumuzu anlamak için.
+        document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active-link')); // sil
+
+        let currentHash = window.location.hash || '#anasayfa';
+        const activeBtn = document.querySelector(`.nav-links a[href="${currentHash}"]`);
+
+        if (activeBtn) {
+            activeBtn.classList.add('active-link'); // ekle
+        }
+
+        
         if (pageName === 'iletisim') setupContactForm(); // İletişim butonunda iletişim sekmesi kullanımı için.
 
         setTimeout(initScrollReveal, 100); // Yeni içerik yüklendiğinde Scroll Reveal'ı yeniden başlat.
@@ -99,8 +112,5 @@ if ('serviceWorker' in navigator) {
             .catch(err => console.log('PWA Kayıt Hatası:', err));
     });
 }
-
-
-
 
 

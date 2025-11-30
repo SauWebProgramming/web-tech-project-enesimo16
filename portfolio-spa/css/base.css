@@ -4,6 +4,10 @@
     box-sizing: border-box;  /* Kutu elemanlarını kolayca hesaplamak için kullandım yoksa boyutlarda sıkıntı yaşanabiliyor. */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.7;

@@ -3,6 +3,7 @@ const pages = {
     // 2. olarak reveal eklenmişti.
     // Şuan ise 3. olarak çoklu dil desteği eklendi.
     // TypeWriter eklendi.
+    // 404 not found eklendi.
 
     // türkçe
     tr: {
