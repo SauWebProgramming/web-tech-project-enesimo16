@@ -1,17 +1,17 @@
 .filter-container {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-bottom: 2rem;
+    gap: 1rem;
+    margin-bottom: 3rem; /* Biraz daha boşluk */
     flex-wrap: wrap;
 }
 
 .filter-btn {
-    padding: 8px 20px;
-    border: 2px solid #667eea;
+    padding: 0.6rem 1.8rem;
+    border: 2px solid #6366f1; /* Modern İndigo Çerçeve */
     background: transparent;
-    color: #667eea;
-    border-radius: 20px;
+    color: #6366f1;
+    border-radius: 50px; /* Hap şeklinde */
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -19,12 +19,15 @@
 }
 
 .filter-btn:hover {
-    background: rgba(102, 126, 234, 0.1);
-    transform: translateY(-2px);
+    background: rgba(99, 102, 241, 0.1); /* Hafif mor zemin */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.2);
 }
 
+/* Seçili Filtre Butonu */
 .filter-btn.active {
-    background: #667eea;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); /* Ana buton ile aynı gradient */
     color: white;
-    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.4);
+    border-color: transparent; /* Çerçeveyi kaldır */
+    box-shadow: 0 5px 20px rgba(79, 70, 229, 0.4); /* Parlama */
 }

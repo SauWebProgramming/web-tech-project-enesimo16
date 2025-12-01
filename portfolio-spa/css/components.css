@@ -1,54 +1,74 @@
 /* İleride kullanılacak card css kısmı, değiştirilebilir. */
 .project-card,
 .skill-card {
-    background: white;
-    border-radius: 15px;
+    background: #ffffff;
+    border-radius: 20px; /* Daha modern yuvarlaklık */
     padding: 2rem;
     margin-bottom: 2rem;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    border: 2px solid transparent;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* Çok hafif, modern gölge */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Yaylanma (Spring) efekti */
+    position: relative;
+    overflow: hidden;
 }
 
+/* Hover Efekti: Kart yukarı fırlar, parlar ve gölgesi renklenir */
 .project-card:hover,
 .skill-card:hover {
-    transform: translateY(-8px);
-    border-color: #667eea;
-    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.25);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15); /* Mor gölge */
+    border-color: rgba(79, 70, 229, 0.3);
+}
+
+.project-card img {
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* Grid kullanılarak kolaylaştırıldı hem de projede grid de kullanmış olmak için kullandım. */
 .projects-grid,
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Biraz daha genişletildi */
+    gap: 2.5rem;
+    margin-top: 3rem;
 }
 
 /* Butonlar */
 .btn {
     display: inline-block;
-    padding: 0.9rem 2rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 1rem 2.5rem;
+    
+    /* Canlı Gradient Arkaplan */
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    background-size: 200% auto; /* Hover animasyonu için */
+    
     color: white;
     text-decoration: none;
-    border-radius: 30px;
+    border-radius: 50px; /* Tam yuvarlak (Pill shape) */
     font-weight: 600;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    
+    transition: all 0.4s ease;
     border: none;
     cursor: pointer;
-    font-size: 0.95rem;
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3); /* Neon Parlama */
+    position: relative;
+    overflow: hidden;
 }
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+    background-position: right center; /* Renk akışı animasyonu */
+    box-shadow: 0 15px 30px rgba(79, 70, 229, 0.5); /* Güçlü parlama */
 }
 
+.btn:active {
+    transform: translateY(-1px);
+}
 
-/* pages.js inline satırları düzeltme */
+/* pages.js inline satırları düzeltme ve Yardımcı Sınıflar */
 
 .text-center { text-align: center; }
 .py-4 { padding: 4rem 0; }
@@ -58,28 +78,62 @@
 
 .typewriter-wrapper {
     min-height: 1.5em;
-    font-size: 1.2rem;
-    color: #667eea;
-    font-weight: 600;
+    font-size: 1.3rem;
+    color: #4f46e5; /* İndigo */
+    font-weight: 700;
+    margin-top: 1rem;
 }
 
 .student-id {
     display: block;
     margin-bottom: 10px;
-    color: #667eea;
+    color: #6366f1;
     font-weight: bold;
+    letter-spacing: 1px;
 }
 
-.subtitle { opacity: 0.8; }
+.subtitle { 
+    opacity: 0.8; 
+    font-size: 1.1rem;
+}
 
+/* Şeffaf Buton (Bana Ulaş) */
 .btn-outline {
     background: transparent;
-    border: 2px solid #667eea;
-    color: #667eea;
+    border: 2px solid #6366f1;
+    color: #6366f1;
     margin-left: 10px;
+    box-shadow: none;
 }
 
 .btn-outline:hover {
-    background: #667eea;
+    background: #6366f1;
     color: white;
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+/* Sosyal İkonlar (Eksik kalmasın) */
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.socials a {
+    color: #475569;
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    background: white;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.socials a:hover {
+    color: #4f46e5;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-color: #4f46e5;
 }
