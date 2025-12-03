@@ -24,14 +24,59 @@ const pages = {
         hakkimda: `
             <section class="about-section reveal">
                 <h2>Hakkımda</h2>
-                <p>Merhaba! Ben Enes. Yazılım geliştirme tutkusu olan bir mühendislik öğrencisiyim. Karmaşık problemleri çözmeyi ve temiz kod yazmayı seviyorum.</p>
+                <p>Merhaba! Ben Enes. Yazılım geliştirme tutkusu olan bir mühendislik öğrencisiyim. Disiplinler arası çalışmayı seviyorum; hem yazılım hem de donanım dünyasında kendimi geliştiriyorum.</p>
+                
+                <br>
+                <h3>Eğitim & Gelişim Süreci</h3>
+                <div class="timeline">
+                    <!-- 2025: Web & Backend -->
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2025 - Günümüz</span>
+                            <h4>Web & Backend</h4>
+                            <p>Web teknolojileri üzerine yoğunlaştım. JavaScript, HTML, CSS, Bootstrap ve React ile frontend; modern mimarilerle backend tarafında kendimi geliştiriyorum.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2025: Akademik (Makine & Donanım) -->
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2025</span>
+                            <h4>Çift Anadal & Yandal</h4>
+                            <p>Sakarya Üniversitesi'nde <strong>Makine Mühendisliği</strong> (Çift Anadal) ve <strong>Bilgisayar Donanımı</strong> (Yandal) eğitimlerine başladım.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2024: Bilişim & C++ -->
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2024</span>
+                            <h4>Bilişim Sistemleri & C++</h4>
+                            <p>Bölüm derslerime başladım. Algoritma mantığını kavrayarak C++ dilinde orta düzeye ulaştım ve yazılım temellerimi sağlamlaştırdım.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2023: Hazırlık -->
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2023</span>
+                            <h4>Üniversiteye Başlangıç</h4>
+                            <p>Sakarya Üniversitesi Bilişim Sistemleri Mühendisliği Hazırlık eğitimini tamamladım.</p>
+                        </div>
+                    </div>
+                </div>
+
                 <br>
                 <h2>Yeteneklerim</h2>
                 <div class="skills-grid">
-                    <div class="skill-card reveal"><h3>C# & .NET</h3><p>OOP, Windows Forms ve ASP.NET Core.</p></div>
-                    <div class="skill-card reveal"><h3>Web Frontend</h3><p>HTML5, CSS3 ve Modern JS (ES6+).</p></div>
-                    <div class="skill-card reveal"><h3>Veritabanı</h3><p>MS SQL Server ve Veri Modelleme.</p></div>
-                    <div class="skill-card reveal"><h3>Araçlar</h3><p>Git, GitHub ve VS Code.</p></div>
+                    <div class="skill-card reveal"><h3>C# & .NET</h3><p>OOP, Windows Forms ve ASP.NET Core mimarisine hakimim.</p></div>
+                    <div class="skill-card reveal"><h3>Web Frontend</h3><p>HTML5, CSS3, JS, Bootstrap ve React kütüphanelerini kullanıyorum.</p></div>
+                    <div class="skill-card reveal"><h3>Backend & DB</h3><p>Veritabanı modelleme ve Backend mimarileri üzerine çalışıyorum.</p></div>
+                    <div class="skill-card reveal"><h3>Mühendislik</h3><p>C++, Algoritma, Donanım ve Makine Mühendisliği disiplinleri.</p></div>
                 </div>
             </section>
         `,
@@ -69,14 +114,59 @@ const pages = {
         hakkimda: `
             <section class="about-section reveal">
                 <h2>About Me</h2>
-                <p>Hello! I'm Enes. I am an engineering student with a passion for software development. I love solving complex problems and writing clean code.</p>
+                <p>Hello! I'm Enes. I am an engineering student with a passion for software development. I enjoy interdisciplinary work, improving myself in both software and hardware worlds.</p>
+                
+                <br>
+                <h3>Education & Experience</h3>
+                <div class="timeline">
+                    <!-- 2025: Web & Backend -->
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2025 - Present</span>
+                            <h4>Web & Backend</h4>
+                            <p>Focused on web technologies. Improving frontend skills with JS, HTML, CSS, Bootstrap, React, and backend with modern architectures.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2025: Academic -->
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2025</span>
+                            <h4>Double Major & Minor</h4>
+                            <p>Started <strong>Mechanical Engineering</strong> (Double Major) and <strong>Computer Hardware</strong> (Minor) at Sakarya University.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2024: ISE & C++ -->
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2024</span>
+                            <h4>Information Systems & C++</h4>
+                            <p>Started departmental courses. Reached intermediate level in C++ by mastering algorithms and software fundamentals.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2023: Prep School -->
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2023</span>
+                            <h4>University Start</h4>
+                            <p>Completed English Preparatory School at Sakarya University Information Systems Engineering.</p>
+                        </div>
+                    </div>
+                </div>
+
                 <br>
                 <h2>My Skills</h2>
                 <div class="skills-grid">
-                    <div class="skill-card reveal"><h3>C# & .NET</h3><p>OOP, Windows Forms and ASP.NET Core.</p></div>
-                    <div class="skill-card reveal"><h3>Web Frontend</h3><p>HTML5, CSS3 and Modern JS (ES6+).</p></div>
-                    <div class="skill-card reveal"><h3>Database</h3><p>MS SQL Server and Data Modeling.</p></div>
-                    <div class="skill-card reveal"><h3>Tools</h3><p>Git, GitHub and VS Code.</p></div>
+                    <div class="skill-card reveal"><h3>C# & .NET</h3><p>Proficient in OOP, Windows Forms, and ASP.NET Core architecture.</p></div>
+                    <div class="skill-card reveal"><h3>Web Frontend</h3><p>Using HTML5, CSS3, JS, Bootstrap, and React libraries.</p></div>
+                    <div class="skill-card reveal"><h3>Backend & DB</h3><p>Working on Database modeling and Backend architectures.</p></div>
+                    <div class="skill-card reveal"><h3>Engineering</h3><p>C++, Algorithms, Hardware, and Mechanical Engineering disciplines.</p></div>
                 </div>
             </section>
         `,
