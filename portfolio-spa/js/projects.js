@@ -4,7 +4,34 @@ async function loadProjects() {
     const loadingText = currentLang === 'en' ? 'Projects Loading...' : 'Projeler Yükleniyor...';
     appContainer.innerHTML = `<h2 style="text-align:center;">${loadingText}</h2>`;
 
+    /* DENEME SKELETON */
+
+    // Yükleniyor yazısı yerine 3 tane sahte kutu oluşturuyoruz
+    let skeletonHTML = `<h2>${(typeof currentLang !== 'undefined' && currentLang === 'en') ? 'My Projects' : 'Projelerim'}</h2><div class="projects-grid">`;
+    
+    for(let i=0; i<3; i++) {
+        skeletonHTML += `
+            <div class="skeleton-card">
+                <div class="skeleton skeleton-img"></div>
+                <div class="skeleton skeleton-title"></div>
+                <div class="skeleton skeleton-text"></div>
+                <div class="skeleton skeleton-text" style="width: 80%;"></div>
+                <div class="skeleton skeleton-btn"></div>
+            </div>
+        `;
+    }
+    skeletonHTML += '</div>';
+    appContainer.innerHTML = skeletonHTML;
+
+    /* DENEME BİTTİ */
+
+
+
     try {
+
+        await new Promise(resolve => setTimeout(resolve, 1000)); // Simüle edilmiş gecikme
+
+
         const response = await fetch('./data/projects.json');
         const projects = await response.json();
 

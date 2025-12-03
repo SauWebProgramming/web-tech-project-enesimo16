@@ -233,3 +233,11 @@ body.dark-mode .timeline-content {
 body.dark-mode .timeline-item:hover .timeline-content {
     background: rgba(30, 41, 59, 0.8);
 }
+
+
+/* CUSTOM CORSER DARK MODE */
+body.dark-mode .cursor { background-color: #f4a261; }
+body.dark-mode .cursor-follower { 
+    background-color: rgba(244, 162, 97, 0.1);
+    border-color: #f4a261;
+}

@@ -1,0 +1,35 @@
+/* custom corsor */
+.cursor, .cursor-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    pointer-events: none; /* Tıklamayı enngelleme */
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease, background 0.3s ease;
+}
+
+.cursor {
+    width: 8px;
+    height: 8px;
+    background-color: #667eea;
+}
+
+.cursor-follower {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(102, 126, 234, 0.1);
+    border: 1px solid #667eea;
+    transition: transform 0.15s ease-out, width 0.3s, height 0.3s;
+}
+
+
+.cursor-hover .cursor { transform: translate(-50%, -50%) scale(0); }
+.cursor-hover .cursor-follower {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(102, 126, 234, 0.3);
+    border-color: transparent;
+}
+

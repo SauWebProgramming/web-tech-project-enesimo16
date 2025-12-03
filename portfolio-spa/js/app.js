@@ -2,6 +2,8 @@ let currentLang = localStorage.getItem('lang') || 'tr'; // Varsayılan türkçe
 
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    if(typeof initCustomCursor === 'function') initCustomCursor(); // Direkt en başa koyuyoruz ki diğer js'ler yüklendikten sonra calissin.
     
     // Dil butonu eventlistener
     const langBtn = document.getElementById('lang-toggle');
@@ -110,6 +112,43 @@ if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('./pwa-sw.js')
             .then(reg => console.log('PWA Başarıyla Kaydedildi:', reg.scope))
             .catch(err => console.log('PWA Kayıt Hatası:', err));
+    });
+}
+
+
+
+// CUSTOM CURSOR KISMI
+function initCustomCursor() {
+    const cursor = document.querySelector('.cursor');
+    const follower = document.querySelector('.cursor-follower');
+    
+    // Mobile mouse efektini gizleme
+    if(window.innerWidth < 768) {
+        if(cursor) cursor.style.display = 'none';
+        if(follower) follower.style.display = 'none';
+        return;
+    }
+
+    document.addEventListener('mousemove', (e) => {
+        // pozisyonlar
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        if(cursor) cursor.style.left = `${posX}px`; cursor.style.top = `${posY}px`;
+        
+        if(follower) follower.style.left = `${posX}px`; follower.style.top = `${posY}px`;
+    });
+
+    document.addEventListener('mouseover', (e) => {
+        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.classList.contains('btn') || e.target.closest('a') || e.target.closest('button')) {
+            document.body.classList.add('cursor-hover');
+        }
+    });
+
+    document.addEventListener('mouseout', (e) => {
+        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.classList.contains('btn') || e.target.closest('a') || e.target.closest('button')) {
+            document.body.classList.remove('cursor-hover');
+        }
     });
 }
 
