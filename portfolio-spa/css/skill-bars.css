@@ -1,0 +1,76 @@
+/* DENEME AMACLİ SKİLL BARS */
+.skill-bar-container {
+    margin-bottom: 1.5rem;
+    position: relative;
+
+    background: rgba(255,255,255,0.5);
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background-color: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden; 
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 10px;
+    width: 0; 
+    transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1); 
+    position: relative;
+}
+
+.progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transform: translateX(-100%);
+    animation: shimmer 2s infinite;
+}
+
+/* SC çalışınca belirlenen bara çıkması için*/
+.reveal.active .progress {
+    animation: fillBar 1.5s ease-out forwards;
+}
+
+/* Animasyon Keyframes */
+@keyframes fillBar {
+    from { width: 0; }
+}
+
+@keyframes shimmer {
+    100% { transform: translateX(100%); }
+}
+
+/* Skill Bars Dark Mode  */
+body.dark-mode .skill-bar-container {
+    background: rgba(30, 41, 59, 0.5);
+    border-color: rgba(255,255,255,0.05);
+}
+body.dark-mode .skill-info { color: #cbd5e1; }
+body.dark-mode .progress-bar { background-color: #0f172a; }
+body.dark-mode .progress { 
+    background: linear-gradient(90deg, #38bdf8, #818cf8); /* Neon Mavi/Mor */
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.3); /* Glow */
+}

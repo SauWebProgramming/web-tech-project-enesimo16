@@ -71,12 +71,59 @@ const pages = {
                 </div>
 
                 <br>
-                <h2>Yeteneklerim</h2>
-                <div class="skills-grid">
-                    <div class="skill-card reveal"><h3>C# & .NET</h3><p>OOP, Windows Forms ve ASP.NET Core mimarisine hakimim.</p></div>
-                    <div class="skill-card reveal"><h3>Web Frontend</h3><p>HTML5, CSS3, JS, Bootstrap ve React kütüphanelerini kullanıyorum.</p></div>
-                    <div class="skill-card reveal"><h3>Backend & DB</h3><p>Veritabanı modelleme ve Backend mimarileri üzerine çalışıyorum.</p></div>
-                    <div class="skill-card reveal"><h3>Mühendislik</h3><p>C++, Algoritma, Donanım ve Makine Mühendisliği disiplinleri.</p></div>
+                <h2>Teknik Yetkinlikler</h2>
+                <div class="skills-wrapper" style="max-width: 800px; margin: 0 auto;">
+    
+                    <div class="skill-bar-container reveal">
+                        <div class="skill-info">
+                            <span>C# & .NET Core</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar-container reveal">
+                        <div class="skill-info">
+                            <span>Web Frontend (HTML/CSS/JS)</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar-container reveal">
+                        <div class="skill-info">
+                            <span>SQL & Veritabanı Yönetimi</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar-container reveal">
+                        <div class="skill-info">
+                            <span>React & Modern JavaScript</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar-container reveal">
+                        <div class="skill-info">
+                            <span>C++ & Algoritma</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
         `,
@@ -161,12 +208,59 @@ const pages = {
                 </div>
 
                 <br>
-                <h2>My Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-card reveal"><h3>C# & .NET</h3><p>Proficient in OOP, Windows Forms, and ASP.NET Core architecture.</p></div>
-                    <div class="skill-card reveal"><h3>Web Frontend</h3><p>Using HTML5, CSS3, JS, Bootstrap, and React libraries.</p></div>
-                    <div class="skill-card reveal"><h3>Backend & DB</h3><p>Working on Database modeling and Backend architectures.</p></div>
-                    <div class="skill-card reveal"><h3>Engineering</h3><p>C++, Algorithms, Hardware, and Mechanical Engineering disciplines.</p></div>
+                <h2>Technical Skills</h2>
+                <div class="skills-wrapper" style="max-width: 800px; margin: 0 auto;">
+                    
+                    <div class="skill-bar-container reveal">
+                        <div class="skill-info">
+                            <span>C# & .NET Core</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar-container reveal">
+                        <div class="skill-info">
+                            <span>Web Frontend (HTML/CSS/JS)</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar-container reveal">
+                        <div class="skill-info">
+                            <span>SQL & Database Management</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar-container reveal">
+                        <div class="skill-info">
+                            <span>React & Modern JS</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+
+                     <div class="skill-bar-container reveal">
+                        <div class="skill-info">
+                            <span>C++ & Algorithms</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
         `,
