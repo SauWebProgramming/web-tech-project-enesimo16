@@ -1,0 +1,72 @@
+.cv-section {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+a.btn-download { 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 1rem 2.5rem;
+    
+
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white !important; 
+    text-decoration: none !important; 
+    
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 10px 20px rgba(30, 41, 59, 0.2);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+a.btn-download:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(30, 41, 59, 0.3);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border-color: #6366f1; 
+}
+
+
+.qr-box {
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.qr-box img {
+    width: 120px; 
+    height: 120px;
+    display: block;
+    border-radius: 8px;
+}
+
+.qr-text {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+/* Dark Mode Ayarları */
+body.dark-mode .btn-download {
+    background: linear-gradient(135deg, #38bdf8, #2563eb);
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+}
+body.dark-mode .qr-box {
+    background: #1e293b;
+    border-color: rgba(255,255,255,0.1);
+}
+body.dark-mode .qr-text { color: #cbd5e1; }

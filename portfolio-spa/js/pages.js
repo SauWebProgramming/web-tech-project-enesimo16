@@ -124,6 +124,20 @@ const pages = {
                         </div>
                     </div>
 
+                    <!-- CV -->
+                    <div class="cv-section reveal">
+                    <a href="portfolio-spa/assets/img/docs/enes-yel-cv.pdf" class="btn-download" download>
+                        <span>📄</span> CV'mi İndir (.pdf)
+                    </a>
+
+                    <!-- QR Kod (Mobil Erişim İçin) -->
+                    <div class="qr-box">
+                        <!-- Buraya kendi QR kod resmini koyacağız -->
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://github.com/enesyel" alt="Mobil QR">
+                        <div class="qr-text">Mobilden İncele</div>
+                    </div>
+                </div>
+
                 </div>
             </section>
         `,
@@ -260,6 +274,18 @@ const pages = {
                             <div class="progress" style="width: 70%"></div>
                         </div>
                     </div>
+
+                    
+                    <div class="cv-section reveal">
+                    <a href="assets/docs/enes-yel-cv.pdf" class="btn-download" download>
+                        <span>📄</span> Download CV (.pdf)
+                    </a>
+
+                    <div class="qr-box">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://github.com/enesyel" alt="Mobile QR">
+                        <div class="qr-text">Scan for Mobile</div>
+                    </div>
+                </div>
 
                 </div>
             </section>
