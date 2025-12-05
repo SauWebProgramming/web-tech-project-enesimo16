@@ -3,6 +3,8 @@ let currentLang = localStorage.getItem('lang') || 'tr'; // Varsayılan türkçe
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    if(typeof initScrollFeatures === 'function') initScrollFeatures(); // back-to-top.js dosyasından önce çağrılması için buraya aldık.
+
     if(typeof initCustomCursor === 'function') initCustomCursor(); // Direkt en başa koyuyoruz ki diğer js'ler yüklendikten sonra calissin.
     
     // Dil butonu eventlistener
