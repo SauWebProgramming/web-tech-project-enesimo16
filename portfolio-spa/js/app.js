@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if(typeof initScrollFeatures === 'function') initScrollFeatures(); // back-to-top.js dosyasından önce çağrılması için buraya aldık.
 
+    if(typeof initWeatherApp === 'function') initWeatherApp(); // Hava durumu uygulaması başlatmat için.
+
     if(typeof initCustomCursor === 'function') initCustomCursor(); // Direkt en başa koyuyoruz ki diğer js'ler yüklendikten sonra calissin.
     
     // Dil butonu eventlistener

@@ -1,0 +1,27 @@
+.weather-widget {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 8px 20px;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #475569;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(5px);
+}
+
+.weather-widget .separator {
+    color: #cbd5e1;
+}
+
+/* Dark Mode */
+body.dark-mode .weather-widget {
+    background: rgba(15, 23, 42, 0.6);
+    color: #cbd5e1;
+    border-color: rgba(255,255,255,0.05);
+}
+body.dark-mode .weather-widget .separator { color: #475569; }
