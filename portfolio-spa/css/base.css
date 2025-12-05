@@ -4,6 +4,16 @@
     box-sizing: border-box;  /* Kutu elemanlarını kolayca hesaplamak için kullandım yoksa boyutlarda sıkıntı yaşanabiliyor. */
 }
 
+/* --- CANVAS ARKAPLAN AYARI --- */
+#starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Bütün elementlerin arkasında kalması için */
+}
+
 html {
     scroll-behavior: smooth;
 }
