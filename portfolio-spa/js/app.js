@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if(typeof initCustomCursor === 'function') initCustomCursor(); // Direkt en başa koyuyoruz ki diğer js'ler yüklendikten sonra calissin.
 
     if(typeof initTiltEffect === 'function') initTiltEffect(); // Kart eğme efektini başlatmak icin.
+
+    if(typeof initKonamiCode === 'function') initKonamiCode(); // Konami kodu başlatmak için.
     
     // Dil butonu eventlistener
     const langBtn = document.getElementById('lang-toggle');

@@ -1,0 +1,203 @@
+/* --- YAZDIRMA DOSTU TASARIM (PRINT CSS) --- */
+/* Bu stiller sadece CTRL+P yapıldığında devreye girer */
+
+/* GEMİNİ YAPMIŞTIR!!! */
+
+@media print {
+    /* 1. Gereksiz Elemanları Gizle */
+    header, /* Navbar */
+    footer, /* Footer */
+    .theme-btn, .lang-btn, .back-to-top, /* Butonlar */
+    .filter-container, /* Filtreler */
+    .cv-section, /* CV İndir Alanı */
+    .scroll-progress-container,
+    .cursor, .cursor-follower, /* Mouse efektleri */
+    #curtain-overlay, /* Animasyon perdesi */
+    .btn, /* Diğer tüm butonlar */
+    .hero-buttons /* Anasayfa buton kapsayıcısı */
+    {
+        display: none !important;
+    }
+
+    /* 2. Temel Renk ve Font Ayarları */
+    body, #app-container, .project-card, .skill-card {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        border: none !important;
+        text-shadow: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    /* 3. Düzen Ayarları - CV Formatı */
+    body {
+        font-family: "Times New Roman", Times, serif; /* Klasik CV fontu */
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+
+    main {
+        padding-top: 0 !important;
+        max-width: 100% !important;
+    }
+
+    #app-container {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* 4. Anasayfa (Header gibi görünsün) */
+    .home-section {
+        text-align: left !important; /* Ortalamayı iptal et, sola daya */
+        padding: 0 !important;
+        margin-bottom: 20px !important;
+        border-bottom: 2px solid #000; /* İsim altına kalın çizgi */
+        padding-bottom: 10px !important;
+    }
+
+    /* İsim (H1) */
+    .home-section h1 {
+        font-size: 24pt !important;
+        margin-bottom: 5px !important;
+        color: black !important;
+        text-align: left !important;
+        border: none !important; /* Alt çizgiyi kaldır (Container'a verdik) */
+    }
+
+    /* Unvan (Typewriter alanı) */
+    .typewriter-wrapper {
+        font-size: 14pt !important;
+        color: #444 !important;
+        font-weight: normal !important;
+        min-height: auto !important;
+        margin: 0 !important;
+    }
+    
+    /* İmleç animasyonunu gizle */
+    .txt-cursor { display: none !important; }
+
+    /* Öğrenci No ve Bölüm Bilgisi */
+    .student-id, .subtitle {
+        font-size: 10pt !important;
+        color: #666 !important;
+        opacity: 1 !important;
+        margin-bottom: 2px !important;
+    }
+
+    /* 5. Bölüm Başlıkları (Hakkımda, Projeler vb.) */
+    h2 {
+        font-size: 16pt !important;
+        margin-top: 30px !important;
+        margin-bottom: 10px !important;
+        border-bottom: 1px solid #ccc !important;
+        text-transform: uppercase;
+        color: black !important;
+        text-align: left !important;
+    }
+
+    h3 {
+        font-size: 14pt !important;
+        margin-top: 15px !important;
+        color: #333 !important;
+    }
+
+    /* 6. Metinler ve Linkler */
+    p {
+        font-size: 11pt !important;
+        margin-bottom: 10px !important;
+        color: #000 !important;
+        text-align: justify; /* Yazıları iki yana yasla */
+    }
+
+    a {
+        text-decoration: none !important;
+        color: black !important;
+    }
+
+    /* 7. Yetenek Barları (Basit Listeye Dönüştür) */
+    .skill-bar-container {
+        border: none !important;
+        padding: 0 !important;
+        margin-bottom: 5px !important;
+        background: transparent !important;
+    }
+
+    .skill-info {
+        font-weight: bold;
+        margin-bottom: 0 !important;
+    }
+
+    /* Barın kendisini gizleyip sadece metin bırakabiliriz veya basit bir çizgi yapabiliriz */
+    .progress-bar {
+        border: 1px solid #000 !important;
+        background: white !important;
+        height: 6px !important;
+        border-radius: 0 !important;
+    }
+
+    .progress {
+        background: #000 !important;
+        border-radius: 0 !important;
+    }
+
+    /* 8. Proje Kartları (Liste Görünümü) */
+    .projects-grid {
+        display: block !important;
+    }
+
+    .project-card {
+        page-break-inside: avoid;
+        border: none !important;
+        border-bottom: 1px dotted #999 !important;
+        margin-bottom: 15px !important;
+        padding: 0 !important;
+        padding-bottom: 15px !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+    }
+
+    .project-card h3 {
+        margin: 0 !important;
+        font-size: 14pt !important;
+    }
+
+    .project-card img {
+        display: none !important; /* Resimler kağıtta yer kaplamasın */
+    }
+    
+    .project-card .btn {
+        display: none !important; /* İncele butonunu gizle */
+    }
+
+    /* Timeline Düzeni */
+    .timeline {
+        padding-left: 0 !important;
+        margin: 0 !important;
+    }
+    .timeline::before { display: none !important; } /* Dikey çizgiyi gizle */
+    
+    .timeline-item {
+        margin-bottom: 15px !important;
+        page-break-inside: avoid;
+    }
+    
+    .timeline-dot { display: none !important; } /* Noktaları gizle */
+    
+    .timeline-content {
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+    }
+    
+    .timeline-date {
+        font-weight: bold;
+        color: #000 !important;
+        background: transparent !important;
+        padding: 0 !important;
+        display: block;
+    }
+}
