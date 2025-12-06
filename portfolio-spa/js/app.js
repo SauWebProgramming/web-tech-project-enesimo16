@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if(typeof initWeatherApp === 'function') initWeatherApp(); // Hava durumu uygulaması başlatmat için.
 
     if(typeof initCustomCursor === 'function') initCustomCursor(); // Direkt en başa koyuyoruz ki diğer js'ler yüklendikten sonra calissin.
+
+    if(typeof initTiltEffect === 'function') initTiltEffect(); // Kart eğme efektini başlatmak icin.
     
     // Dil butonu eventlistener
     const langBtn = document.getElementById('lang-toggle');
@@ -77,6 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (pageName === 'iletisim') setupContactForm(); // İletişim butonunda iletişim sekmesi kullanımı için.
 
         setTimeout(initScrollReveal, 100); // Yeni içerik yüklendiğinde Scroll Reveal'ı yeniden başlat.
+
+        setTimeout(() => {
+            if(typeof initTiltEffect === 'function') initTiltEffect();
+        }, 250); // Yeni içerik yüklendiğinde Tilt Effect'i yeniden başlat.
 
         startTypeWriterSafe(); // Yeni içerik yüklendiğinde TypeWriter'ı yeniden başlat. Alttaki fonksiyonu çağırıyoruz.
     }

@@ -10,13 +10,21 @@
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Yaylanma (Spring) efekti */
     position: relative;
     overflow: hidden;
+
+    /* tilted efekti için */
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 /* Hover Efekti: Kart yukarı fırlar, parlar ve gölgesi renklenir */
 .project-card:hover,
 .skill-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15); /* Mor gölge */
+
+    /* tilted efekti için */
+    /*  transform: translateY(-10px) scale(1.02); geçici olarak devre disi aliyorum cünkü hata veriyor */ 
+    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
     border-color: rgba(79, 70, 229, 0.3);
 }
 
