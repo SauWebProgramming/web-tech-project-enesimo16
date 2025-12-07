@@ -81,7 +81,7 @@
     font-weight: bold;
 }
 
-/* İçerik Alanı */
+
 .terminal-body {
     flex: 1;
     padding: 20px;
@@ -91,7 +91,6 @@
     line-height: 1.6;
 }
 
-/* Komut Satırı */
 .input-line {
     display: flex;
     margin-top: 10px;
