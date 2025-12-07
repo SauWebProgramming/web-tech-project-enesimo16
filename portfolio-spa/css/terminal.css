@@ -1,0 +1,118 @@
+/* TERMINAL */
+
+.terminal-toggle {
+    position: fixed;
+    bottom: 30px;
+    left: 30px; 
+    width: 50px;
+    height: 50px;
+    background: #0f172a;
+    border: 2px solid #22c55e; 
+    color: #22c55e;
+    border-radius: 12px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.terminal-toggle:hover {
+    background: #22c55e;
+    color: #0f172a;
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.6); 
+}
+
+.terminal-overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    webkit-backdrop-filter: blur(5px);
+    z-index: 2001;
+    align-items: center;
+    justify-content: center;
+}
+
+.terminal-overlay.open {
+    display: flex;
+}
+
+.terminal-window {
+    width: 800px;
+    max-width: 90%;
+    height: 500px;
+    background-color: #0c0c0c; 
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.terminal-bar {
+    background: #1f2937;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+}
+
+.terminal-title {
+    color: #9ca3af;
+    font-size: 0.9rem;
+}
+
+.terminal-close {
+    color: #ef4444;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* İçerik Alanı */
+.terminal-body {
+    flex: 1;
+    padding: 20px;
+    color: #22c55e;
+    overflow-y: auto;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Komut Satırı */
+.input-line {
+    display: flex;
+    margin-top: 10px;
+}
+
+.prompt {
+    color: #38bdf8; 
+    margin-right: 10px;
+}
+
+#cmd-input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    flex: 1;
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+}
+
+.output-line { margin-bottom: 10px; }
+.cmd-success { color: #22c55e; }
+.cmd-error { color: #ef4444; }
+.cmd-info { color: #facc15; }
