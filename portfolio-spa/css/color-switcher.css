@@ -1,3 +1,5 @@
+/* CLAUDE TARAFINDAN DESTEK ALINMISTIR */
+
 
 :root {
     --primary-color: #667eea;
@@ -5,7 +7,7 @@
     --accent-color: #4f46e5;
 }
 
-
+/* Ana Tema Ayarları Konteyneri */
 .theme-settings {
     position: fixed;
     top: 30%;
@@ -13,75 +15,280 @@
     z-index: 2005;
     display: flex;
     align-items: center;
-    transform: translateX(100%); 
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.settings-btn {
-    width: 45px;
-    height: 45px;
-    background: #fff;
-    border-radius: 8px 0 0 8px;
-    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 1.5rem;
-    position: absolute;
-    left: -45px; 
-}
-
-.theme-options {
-    background: #fff;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    border-radius: 0 0 0 8px;
+    transform: translateX(calc(100% + 20px));
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    filter: drop-shadow(-5px 5px 25px rgba(0, 0, 0, 0.15));
 }
 
 .theme-settings.show {
     transform: translateX(0);
+    animation: slideInBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
+@keyframes slideInBounce {
+    0% { transform: translateX(calc(100% + 20px)); }
+    60% { transform: translateX(-10px); }
+    80% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Ayarlar Butonu */
+.settings-btn {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 12px 0 0 12px;
+    box-shadow: 
+        -4px 0 20px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.6rem;
+    position: absolute;
+    left: -50px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.settings-btn:hover {
+    transform: translateX(-5px) scale(1.05);
+    box-shadow: 
+        -6px 0 30px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    animation: pulse 1.5s infinite;
+}
+
+.settings-btn:active {
+    transform: translateX(-5px) scale(0.95);
+}
+
+/* Buton içindeki simge animasyonu */
+.settings-btn::before {
+    content: '⚙️';
+    animation: rotateIcon 3s linear infinite;
+    display: inline-block;
+}
+
+.theme-settings.show .settings-btn::before {
+    animation: rotateIconFast 0.5s ease-out;
+}
+
+@keyframes rotateIcon {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes rotateIconFast {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(180deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: -6px 0 30px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8); }
+    50% { box-shadow: -6px 0 40px rgba(102, 126, 234, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.8); }
+}
+
+/* Tema Seçenekleri Paneli */
+.theme-options {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+    webkit-backdrop-filter: blur(20px) saturate(180%);
+    padding: 20px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 12px 0 0 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Panel arkaplan dekorasyon */
+.theme-options::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.05) 0%, transparent 70%);
+    animation: rotateGradient 10s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rotateGradient {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Tema Çemberleri */
 .theme-circle {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     cursor: pointer;
-    transition: transform 0.2s;
-    border: 2px solid transparent;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.15),
+        inset 0 2px 5px rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Çember üzerine gelindiğinde parlama efekti */
+.theme-circle::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.4) 50%, transparent 70%);
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    transition: transform 0.6s;
+}
+
+.theme-circle:hover::before {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
 }
 
 .theme-circle:hover {
-    transform: scale(1.2);
+    transform: scale(1.25) rotate(5deg);
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.25),
+        inset 0 2px 5px rgba(255, 255, 255, 0.4),
+        0 0 0 3px rgba(255, 255, 255, 0.3);
+    animation: wiggle 0.5s ease-in-out;
 }
 
+@keyframes wiggle {
+    0%, 100% { transform: scale(1.25) rotate(5deg); }
+    25% { transform: scale(1.25) rotate(-5deg); }
+    75% { transform: scale(1.25) rotate(5deg); }
+}
+
+.theme-circle:active {
+    transform: scale(1.1) rotate(0deg);
+    animation: ripple 0.6s ease-out;
+}
+
+/* Ripple efekti */
+@keyframes ripple {
+    0% {
+        box-shadow: 
+            0 0 0 0 rgba(102, 126, 234, 0.4),
+            0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+    100% {
+        box-shadow: 
+            0 0 0 20px rgba(102, 126, 234, 0),
+            0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* Aktif Tema */
 .theme-circle.active {
     border-color: #333;
-    transform: scale(1.1);
+    border-width: 4px;
+    transform: scale(1.15);
+    box-shadow: 
+        0 6px 20px rgba(0, 0, 0, 0.25),
+        inset 0 2px 5px rgba(255, 255, 255, 0.3),
+        0 0 0 4px rgba(102, 126, 234, 0.2),
+        0 0 20px rgba(102, 126, 234, 0.4);
+    animation: activeGlow 2s ease-in-out infinite;
 }
 
-body.dark-mode .settings-btn,
+@keyframes activeGlow {
+    0%, 100% {
+        box-shadow: 
+            0 6px 20px rgba(0, 0, 0, 0.25),
+            inset 0 2px 5px rgba(255, 255, 255, 0.3),
+            0 0 0 4px rgba(102, 126, 234, 0.2),
+            0 0 20px rgba(102, 126, 234, 0.4);
+    }
+    50% {
+        box-shadow: 
+            0 8px 25px rgba(0, 0, 0, 0.3),
+            inset 0 2px 5px rgba(255, 255, 255, 0.4),
+            0 0 0 6px rgba(102, 126, 234, 0.3),
+            0 0 30px rgba(102, 126, 234, 0.6);
+    }
+}
+
+/* Dark Mode Stilleri */
+body.dark-mode .settings-btn {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        -4px 0 20px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .settings-btn:hover {
+    box-shadow: 
+        -6px 0 30px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
 body.dark-mode .theme-options {
-    background: #1e293b;
-    color: #fff;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2);
 }
-body.dark-mode .theme-circle.active { border-color: #fff; }
 
+body.dark-mode .theme-options::before {
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+}
 
-/* Mevcut CSS'teki hardcoded renkleri bu değişkenlerle değiştiriyoruz, eziyoruz. */
+body.dark-mode .theme-circle {
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.3),
+        inset 0 2px 5px rgba(255, 255, 255, 0.1);
+}
 
-/* 1. Body Arkaplan */
+body.dark-mode .theme-circle.active {
+    border-color: #fff;
+    box-shadow: 
+        0 6px 20px rgba(0, 0, 0, 0.4),
+        inset 0 2px 5px rgba(255, 255, 255, 0.15),
+        0 0 0 4px rgba(102, 126, 234, 0.3),
+        0 0 20px rgba(102, 126, 234, 0.5);
+}
+
+/* Mevcut CSS Override'lar */
 body {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
     background-attachment: fixed !important;
+    animation: gradientShift 15s ease infinite;
 }
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
 body.dark-mode {
-    
     background: linear-gradient(-45deg, #0f172a, #1e1b4b, #312e81, #020617) !important;
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .logo, #app-container h1, #app-container h2 {
@@ -89,31 +296,53 @@ body.dark-mode {
     -webkit-background-clip: text !important;
     background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.2); }
 }
 
 .btn, .filter-btn.active, .back-to-top:hover, .socials a:hover {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
 }
 
 .btn-outline, .filter-btn, .theme-btn, .lang-btn, .nav-links a:hover, .nav-links a.active-link {
     color: var(--primary-color) !important;
     border-color: var(--primary-color) !important;
+    transition: all 0.3s ease !important;
 }
 
 #app-container h2::after, .nav-links a::before, .nav-links a.active-link::after {
     background: var(--primary-color) !important;
+    animation: slideIn 0.5s ease-out !important;
+}
+
+@keyframes slideIn {
+    from { width: 0; opacity: 0; }
+    to { width: 100%; opacity: 1; }
 }
 
 .progress, .scroll-progress-bar {
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)) !important;
+    animation: progressPulse 2s ease-in-out infinite !important;
+}
+
+@keyframes progressPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
 }
 
 .project-card:hover, .skill-card:hover {
     border-color: var(--primary-color) !important;
+    transform: translateY(-5px) !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
 }
 
-/* 8. Dark Mode Vurguları (Önemli: Dark modda ana renkleri değişkene bağlıyoruz) */
+/* Dark Mode Vurguları */
 body.dark-mode .logo, 
 body.dark-mode h1, 
 body.dark-mode h2,
@@ -123,6 +352,7 @@ body.dark-mode .nav-links a.active-link {
     -webkit-background-clip: text !important;
     background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
+    animation: shimmer 3s ease-in-out infinite;
 }
 
 body.dark-mode .btn-outline,
@@ -131,4 +361,22 @@ body.dark-mode .lang-btn,
 body.dark-mode .filter-btn {
     border-color: var(--primary-color) !important;
     color: var(--primary-color) !important;
+}
+
+/* Responsive Optimizasyonlar */
+@media (max-width: 768px) {
+    .theme-settings {
+        top: 20%;
+    }
+    
+    .settings-btn {
+        width: 45px;
+        height: 45px;
+        left: -45px;
+    }
+    
+    .theme-circle {
+        width: 35px;
+        height: 35px;
+    }
 }

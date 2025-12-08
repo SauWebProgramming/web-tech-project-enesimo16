@@ -1,6 +1,8 @@
 /* JS İLE FORM-VALİDATİON SAĞLAMAK İÇİN OLAN KISIM
    Pages.js'e de değiştirdiğim iletişim kısmı için form validation ve css yapıyorum.
    Modernize Edildi: Glow Efektleri ve Yumuşak Geçişler Eklendi.
+
+   CLAUDE ILE GUNCELLENDI.
 */
 
 .form-group {
@@ -15,10 +17,27 @@
     color: #475569; 
     font-size: 0.95rem;
     letter-spacing: 0.5px;
-    transition: color 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    display: inline-block;
 }
 
-/* Input ve Textarea Temel Tasarımı */
+.form-group label::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-group input:focus ~ label::after,
+.form-group textarea:focus ~ label::after {
+    width: 100%;
+}
+
 .form-group input, 
 .form-group textarea {
     width: 100%;
@@ -26,39 +45,118 @@
     border-radius: 16px; 
     border: 2px solid rgba(0,0,0,0.1); 
     outline: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-    background: rgba(255, 255, 255, 0.8); 
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.9) 100%); 
     font-family: inherit;
     font-size: 1rem;
     color: #1e293b;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02); 
+    box-shadow: 
+        0 4px 6px rgba(0,0,0,0.02),
+        inset 0 1px 0 rgba(255,255,255,0.5); 
+    position: relative;
+    backdrop-filter: blur(10px);
 }
 
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #94a3b8;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.form-group input:focus::placeholder,
+.form-group textarea:focus::placeholder {
+    opacity: 0.5;
+    transform: translateX(5px);
+}
+
+.form-group input:hover, 
+.form-group textarea:hover {
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 
+        0 6px 12px rgba(0,0,0,0.04),
+        inset 0 1px 0 rgba(255,255,255,0.5);
+    transform: translateY(-1px);
+}
 
 .form-group input:focus, 
 .form-group textarea:focus {
     border-color: #6366f1;
-    background: #ffffff;
-    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2), 0 10px 20px rgba(99, 102, 241, 0.1); 
-    transform: translateY(-2px); 
+    background: linear-gradient(135deg, #ffffff 0%, #fefeff 100%);
+    box-shadow: 
+        0 0 0 4px rgba(99, 102, 241, 0.15), 
+        0 12px 24px rgba(99, 102, 241, 0.15),
+        0 0 40px rgba(99, 102, 241, 0.1),
+        inset 0 1px 0 rgba(255,255,255,0.8); 
+    transform: translateY(-3px) scale(1.005); 
+    animation: focusPulse 2s ease-in-out infinite;
+}
+
+@keyframes focusPulse {
+    0%, 100% {
+        box-shadow: 
+            0 0 0 4px rgba(99, 102, 241, 0.15), 
+            0 12px 24px rgba(99, 102, 241, 0.15),
+            0 0 40px rgba(99, 102, 241, 0.1),
+            inset 0 1px 0 rgba(255,255,255,0.8);
+    }
+    50% {
+        box-shadow: 
+            0 0 0 6px rgba(99, 102, 241, 0.2), 
+            0 16px 32px rgba(99, 102, 241, 0.2),
+            0 0 50px rgba(99, 102, 241, 0.15),
+            inset 0 1px 0 rgba(255,255,255,0.8);
+    }
 }
 
 .form-group input:focus + label,
 .form-group textarea:focus + label {
     color: #6366f1;
+    transform: translateY(-2px);
+    text-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
 }
 
-/* hata */
 .form-group.error input,
 .form-group.error textarea {
     border-color: #ef4444; 
-    background-color: #fff5f5; 
-    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.15); 
-    animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both; 
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%); 
+    box-shadow: 
+        0 0 0 4px rgba(239, 68, 68, 0.15),
+        0 8px 16px rgba(239, 68, 68, 0.1),
+        inset 0 1px 0 rgba(255,255,255,0.5); 
+    animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both, errorGlow 2s ease-in-out infinite; 
+    transform: translateY(0);
+}
+
+@keyframes errorGlow {
+    0%, 100% {
+        box-shadow: 
+            0 0 0 4px rgba(239, 68, 68, 0.15),
+            0 8px 16px rgba(239, 68, 68, 0.1),
+            inset 0 1px 0 rgba(255,255,255,0.5);
+    }
+    50% {
+        box-shadow: 
+            0 0 0 6px rgba(239, 68, 68, 0.25),
+            0 12px 24px rgba(239, 68, 68, 0.2),
+            inset 0 1px 0 rgba(255,255,255,0.5);
+    }
 }
 
 .form-group.error label {
     color: #ef4444;
+    animation: labelShake 0.4s ease;
+}
+
+@keyframes labelShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
 }
 
 .error-text {
@@ -68,11 +166,17 @@
     display: none; 
     font-weight: 600;
     align-items: center;
+    background: linear-gradient(135deg, rgba(254, 226, 226, 0.8) 0%, rgba(254, 202, 202, 0.6) 100%);
+    padding: 8px 12px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.15);
 }
 
 .form-group.error .error-text {
     display: flex;
-    animation: slideDown 0.3s ease forwards;
+    animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .form-group.error .error-text::before {
@@ -80,38 +184,125 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 18px;
-    height: 18px;
-    background: #ef4444;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
     color: white;
     border-radius: 50%;
     margin-right: 8px;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: bold;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+    animation: iconBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* Başarı */
+@keyframes iconBounce {
+    0% { transform: scale(0) rotate(-180deg); }
+    50% { transform: scale(1.2) rotate(10deg); }
+    100% { transform: scale(1) rotate(0); }
+}
+
 .form-group.success input,
 .form-group.success textarea {
     border-color: #22c55e; 
-    background-color: #f0fdf4;
-    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15); 
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    box-shadow: 
+        0 0 0 4px rgba(34, 197, 94, 0.15),
+        0 8px 16px rgba(34, 197, 94, 0.1),
+        inset 0 1px 0 rgba(255,255,255,0.6); 
+    animation: successPulse 0.6s cubic-bezier(0.4, 0, 0.2, 1), successGlow 2s ease-in-out infinite;
+}
+
+@keyframes successPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+@keyframes successGlow {
+    0%, 100% {
+        box-shadow: 
+            0 0 0 4px rgba(34, 197, 94, 0.15),
+            0 8px 16px rgba(34, 197, 94, 0.1),
+            inset 0 1px 0 rgba(255,255,255,0.6);
+    }
+    50% {
+        box-shadow: 
+            0 0 0 6px rgba(34, 197, 94, 0.25),
+            0 12px 24px rgba(34, 197, 94, 0.2),
+            inset 0 1px 0 rgba(255,255,255,0.6);
+    }
 }
 
 .form-group.success label {
     color: #22c55e;
+    animation: successBounce 0.6s ease;
 }
 
-/* Animasyonlar */
+@keyframes successBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+.form-group.success::after {
+    content: '✓';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #22c55e;
+    font-size: 1.5rem;
+    font-weight: bold;
+    animation: checkMark 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    text-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+}
+
+@keyframes checkMark {
+    0% { 
+        opacity: 0; 
+        transform: translateY(-50%) scale(0) rotate(-180deg); 
+    }
+    50% { 
+        transform: translateY(-50%) scale(1.3) rotate(10deg); 
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateY(-50%) scale(1) rotate(0); 
+    }
+}
 
 @keyframes shake {
-    10%, 90% { transform: translate3d(-1px, 0, 0); }
-    20%, 80% { transform: translate3d(2px, 0, 0); }
-    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
-    40%, 60% { transform: translate3d(4px, 0, 0); }
+    10%, 90% { transform: translate3d(-2px, 0, 0); }
+    20%, 80% { transform: translate3d(3px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-5px, 0, 0); }
+    40%, 60% { transform: translate3d(5px, 0, 0); }
 }
 
 @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { 
+        opacity: 0; 
+        transform: translateY(-15px);
+        max-height: 0;
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0);
+        max-height: 100px;
+    }
+}
+
+.form-group input:not(:placeholder-shown),
+.form-group textarea:not(:placeholder-shown) {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 251, 252, 0.95) 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .form-group input,
+    .form-group textarea,
+    .form-group label,
+    .error-text,
+    .form-group.success::after {
+        animation: none !important;
+        transition: none !important;
+    }
 }
