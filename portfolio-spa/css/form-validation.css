@@ -54,7 +54,7 @@
         0 4px 6px rgba(0,0,0,0.02),
         inset 0 1px 0 rgba(255,255,255,0.5); 
     position: relative;
-    backdrop-filter: blur(10px);
+    webkit-backdrop-filter: blur(10px);
 }
 
 .form-group textarea {
@@ -169,7 +169,7 @@
     background: linear-gradient(135deg, rgba(254, 226, 226, 0.8) 0%, rgba(254, 202, 202, 0.6) 100%);
     padding: 8px 12px;
     border-radius: 10px;
-    backdrop-filter: blur(10px);
+    webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(239, 68, 68, 0.2);
     box-shadow: 0 4px 12px rgba(239, 68, 68, 0.15);
 }

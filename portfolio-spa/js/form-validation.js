@@ -44,16 +44,19 @@ function setupContactForm() {
                 setSuccess(messageInput);
             }
 
-            // Burada klasik modelState.isValid gibi kontrol yapıyoruz.
+            // isvalid kontrolü yapıyoruz ve backend olmadıgından text olarak success
             if (isValid) {
-                // Backend olmadığı için görsel başarı mesajı veriyoruz
-                msgDiv.innerHTML = `
-                    <div style="background:#d4edda; color:#155724; padding:1rem; border-radius:10px; margin-top:1rem; text-align:center; border: 1px solid #c3e6cb;">
-                        ${successMsg}
-                    </div>
-                `;
                 
+                if(typeof Toast !== 'undefined') {
+                    const msg = (typeof currentLang !== 'undefined' && currentLang === 'en') 
+                        ? 'Message sent successfully!' 
+                        : 'Mesajınız başarıyla gönderildi!';
+                    
+                    Toast.show(msg, 'success');
+                }
+
                 form.reset(); // çizgileri kaldırmak için
+                document.querySelectorAll('.form-group').forEach(group => group.classList.remove('success'))
                 setTimeout(() => {
                     document.querySelectorAll('.form-group').forEach(group => group.classList.remove('success'));
                     msgDiv.innerHTML = '';
