@@ -18,7 +18,7 @@ const pages = {
                 <p class="subtitle">Web Teknolojileri | Backend Development | Mechanical | Hardware</p>
                 <br>
                 <a href="#projelerim" class="btn">Projelerimi İncele</a>
-                <a href="#iletisim" class="btn btn-outline">Bana Ulaş</a>
+                <a href="#iletisim" class="btn">Bana Ulaş</a>
             </section>
         `,
         hakkimda: `
@@ -169,7 +169,7 @@ const pages = {
                 <p class="subtitle">Web Technologies | Backend Development | Mechanical | Hardware</p>
                 <br>
                 <a href="#projelerim" class="btn">View Projects</a>
-                <a href="#iletisim" class="btn btn-outline">Contact Me</a>
+                <a href="#iletisim" class="btn">Contact Me</a>
             </section>
         `,
         hakkimda: `

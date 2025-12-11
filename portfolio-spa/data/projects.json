@@ -1,6 +1,46 @@
 [
   {
     "id": 1,
+    "title": "Konteyner Optimizasyon Algoritması (TÜBİTAK 1.)",
+    "title_en": "Container Optimization Algorithm (TÜBİTAK Winner)",
+    "description": "Python ile geliştirilen, kargo yerleşimini optimize ederek maliyeti düşüren ve TÜBİTAK yarışmasında birincilik ödülü alan yapay zeka destekli algoritma.",
+    "description_en": "AI-supported algorithm developed using Python that optimizes cargo placement to reduce costs, winning first prize in the TÜBİTAK competition.",
+    "image": "https://via.placeholder.com/600x400/f59e0b/ffffff?text=TUBITAK+Winner",
+    "link": "#",
+    "category": "masaustu"
+  },
+  {
+    "id": 2,
+    "title": "ENVENT - Etkinlik Uygulaması",
+    "title_en": "ENVENT - Event Application",
+    "description": "C#, .NET Core MVC ve Razor Pages kullanılarak geliştirilen kapsamlı etkinlik yönetim platformu. Biletleme, katılımcı takibi ve organizasyon modülleri içerir.",
+    "description_en": "Comprehensive event management platform developed using C#, .NET Core MVC, and Razor Pages. Includes ticketing, attendee tracking, and organization modules.",
+    "image": "https://via.placeholder.com/600x400/ec4899/ffffff?text=ENVENT+App",
+    "link": "#",
+    "category": "web"
+  },
+  {
+    "id": 3,
+    "title": "Linux Sistem İzleme Aracı",
+    "title_en": "Linux System Monitor Tool",
+    "description": "Linux sunuculardaki sistem kaynaklarını (CPU, RAM, Disk) ve log verilerini anlık olarak analiz edip görselleştiren izleme uygulaması.",
+    "description_en": "Monitoring application that analyzes and visualizes system resources (CPU, RAM, Disk) and log data on Linux servers in real-time.",
+    "image": "https://via.placeholder.com/600x400/10b981/ffffff?text=Linux+Monitor",
+    "link": "#",
+    "category": "masaustu"
+  },
+  {
+    "id": 4,
+    "title": "SPA Portfolyo Sitesi",
+    "title_en": "SPA Portfolio Website",
+    "description": "HTML5, CSS3 ve Modern JavaScript (ES6+) ile geliştirilen Tek Sayfa Uygulaması (SPA). Fetch API, PWA ve Routing yapısı içerir.",
+    "description_en": "Single Page Application (SPA) developed with HTML5, CSS3, and Modern JavaScript (ES6+). Includes Fetch API, PWA, and Routing structure.",
+    "image": "assets/img/spaportfolyo.png",
+    "link": "https://github.com/SauWebProgramming/web-tech-project-enesimo16",
+    "category": "web"
+  },
+  {
+    "id": 5,
     "title": "Kule Savunma Oyunu",
     "title_en": "Tower Defense Game",
     "description": "C# ve Windows Forms kullanılarak geliştirilen strateji tabanlı masaüstü oyunu. Nesne Yönelimli Programlama (OOP) prensipleri etkin bir şekilde kullanılmıştır.",
@@ -10,23 +50,43 @@
     "category": "masaustu"
   },
   {
-    "id": 2,
-    "title": "SPA Portfolyo Sitesi",
-    "title_en": "SPA Portfolio Website",
-    "description": "HTML5, CSS3 ve Modern JavaScript (ES6+) ile geliştirilen Tek Sayfa Uygulaması (SPA). Fetch API ve Routing yapısı içerir.",
-    "description_en": "Single Page Application (SPA) developed with HTML5, CSS3, and Modern JavaScript (ES6+). Includes Fetch API and Routing structure.",
-    "image": "assets/img/spaportfolyo.png",
-    "link": "https://github.com/SauWebProgramming/web-tech-project-enesimo16",
-    "category": "web"
+    "id": 6,
+    "title": "Sanal Kütüphane Sistemi",
+    "title_en": "Virtual Library System",
+    "description": "C++ ve OOP prensipleri kullanılarak tasarlanan, kitap takibi, ödünç alma ve üye yönetimini sağlayan kütüphane otomasyonu.",
+    "description_en": "Library automation designed using C++ and OOP principles, providing book tracking, borrowing, and member management.",
+    "image": "https://via.placeholder.com/600x400/3b82f6/ffffff?text=C%2B%2B+Library",
+    "link": "#",
+    "category": "masaustu"
   },
   {
-    "id": 3,
-    "title": "DENEME",
-    "title_en": "SPA Portfolio Website",
-    "description": "HTML5, CSS3 ve Modern JavaScript (ES6+) ile geliştirilen Tek Sayfa Uygulaması (SPA). Fetch API ve Routing yapısı içerir.",
-    "description_en": "Single Page Application (SPA) developed with HTML5, CSS3, and Modern JavaScript (ES6+). Includes Fetch API and Routing structure.",
-    "image": "",
+    "id": 7,
+    "title": "Lojistik Planlama Algoritması",
+    "title_en": "Logistics Planning Algorithm",
+    "description": "C++ ile geliştirilen, depo yönetimi ve nakliye rotalarını optimize eden, maliyet hesaplaması yapan lojistik planlama aracı.",
+    "description_en": "Logistics planning tool developed with C++, optimizing warehouse management and shipping routes, performing cost calculations.",
+    "image": "https://via.placeholder.com/600x400/8b5cf6/ffffff?text=Logistics+C%2B%2B",
     "link": "#",
-    "category": "web"
+    "category": "masaustu"
+  },
+  {
+    "id": 8,
+    "title": "Sipariş Yönetim Sistemi",
+    "title_en": "Order Management System",
+    "description": "Python kullanılarak oluşturulan, müşteri siparişlerini işleyen, stok takibi yapan ve sipariş durumunu yöneten backend odaklı sistem.",
+    "description_en": "Backend-focused system created using Python that processes customer orders, tracks inventory, and manages order status.",
+    "image": "https://via.placeholder.com/600x400/6366f1/ffffff?text=Order+Management",
+    "link": "#",
+    "category": "masaustu"
+  },
+  {
+    "id": 9,
+    "title": "ATM Uygulaması",
+    "title_en": "ATM Application",
+    "description": "Python ile geliştirilen, kullanıcı girişi, bakiye sorgulama, para yatırma ve çekme işlemlerini simüle eden konsol tabanlı bankacılık uygulaması.",
+    "description_en": "Console-based banking application developed with Python, simulating user login, balance inquiry, deposit, and withdrawal transactions.",
+    "image": "https://via.placeholder.com/600x400/14b8a6/ffffff?text=Python+ATM",
+    "link": "#",
+    "category": "masaustu"
   }
 ]

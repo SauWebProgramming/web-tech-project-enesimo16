@@ -1,5 +1,4 @@
-//  TERMINAL 
-// oto olarak çalıstırılıyor DOMContentLoaded içinde yapılmıyor sıkıntı çıkmasın diye.
+// TERMINAL 
 
 function initTerminal() {
     console.log("📟 Terminal Modülü Yükleniyor...");
@@ -11,18 +10,22 @@ function initTerminal() {
     const outputDiv = document.getElementById('terminal-output');
     const bodyDiv = document.getElementById('terminal-body');
 
-    if (!modal) { console.error("HATA: #terminal-overlay bulunamadı!"); return; }
-    if (!openBtn) { console.error("HATA: #terminal-btn bulunamadı!"); return; }
-    if (!input) { console.error("HATA: #cmd-input bulunamadı!"); return; }
-
-    console.log("Terminal çalışıyor...");
+    if (!modal || !openBtn || !input) { 
+        console.error("HATA: Terminal elementleri bulunamadı!"); 
+        return; 
+    }
 
     openBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        console.log("🖱️ Terminal butonuna tıklandı!");
-        
         modal.classList.add('open'); 
         
+        if(typeof Toast !== 'undefined') {
+            const msg = (typeof currentLang !== 'undefined' && currentLang === 'en') 
+                ? 'Terminal Mode Activated 📟' 
+                : 'Terminal Modu Aktif 📟';
+            Toast.show(msg, 'info');
+        }
+
         setTimeout(() => {
             input.focus();
         }, 100);
@@ -45,7 +48,6 @@ function initTerminal() {
         });
     }
 
-    // KOMUT GİRİŞİ
     input.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
             const command = input.value.trim().toLowerCase();
@@ -56,7 +58,6 @@ function initTerminal() {
         }
     });
 
-    // KOMUT İŞLEYİCİ
     function processCommand(cmd) {
         const cmdLine = document.createElement('div');
         cmdLine.innerHTML = `<span style="color:#38bdf8">guest@enes:~$</span> ${cmd}`;
@@ -68,20 +69,18 @@ function initTerminal() {
             case 'help':
                 response = `
                     <div class="cmd-info">Mevcut Komutlar:</div>
-                    <div>- <span class="cmd-success">about</span>: Hakkımda</div>
-                    <div>- <span class="cmd-success">projects</span>: Projeler</div>
-                    <div>- <span class="cmd-success">social</span>: Sosyal Medya</div>
-                    <div>- <span class="cmd-success">contact</span>: İletişim</div>
-                    <div>- <span class="cmd-success">clear</span>: Temizle</div>
-                    <div>- <span class="cmd-success">konami</span>: Konami :)</div>
-                    <div>- <span class="cmd-success">bonus</span>: Bonus Ozellikler</div>
-                    <div>- <span class="cmd-success">exit</span>: Çıkış</div>
-                    
+                    <div>- <span class="cmd-success">about</span>: Hakkımda kısa bilgi</div>
+                    <div>- <span class="cmd-success">projects</span>: Projelerimi listele</div>
+                    <div>- <span class="cmd-success">social</span>: Sosyal medya linkleri</div>
+                    <div>- <span class="cmd-success">contact</span>: İletişim bilgileri</div>
+                    <div>- <span class="cmd-success">bonus</span>: Projedeki tüm ekstraları gör!</div>
+                    <div>- <span class="cmd-success">clear</span>: Ekranı temizle</div>
+                    <div>- <span class="cmd-success">exit</span>: Terminali kapat</div>
                 `;
                 break;
             
             case 'about':
-                response = "Ben Eneeeeeeeeeeeeeeeeeess!!!";
+                response = "Merhaba! Ben Enes. Sakarya Üniversitesi Bilişim Sistemleri Mühendisliği öğrencisiyim.";
                 break;
 
             case 'projects':
@@ -95,12 +94,35 @@ function initTerminal() {
             case 'social':
                 response = `
                     <div>GitHub: <a href="https://github.com/enesyel" target="_blank" style="color:#fff">github.com/enesyel</a></div>
-                    <div>LinkedIn: <a href="https://www.linkedin.com/in/enes-yel-44a1ab297/" target="_blank" style="color:#fff">https://www.linkedin.com/in/enes-yel-44a1ab297/</a></div>
                 `;
                 break;
             
             case 'contact':
                 response = "Email: enes@sakarya.edu.tr";
+                break;
+
+            case 'bonus':
+                response = `
+                    <div class="cmd-info">Bonus komutunu buldunuz! Tebrikler :)</div>
+                    <div>İşte projeye eklenen ekstra özellikler:</div>
+                    <br>
+                    <div>✅ PWA (Mobil Uygulama)</div>
+                    <div>✅ Scroll Reveal Animasyonları</div>
+                    <div>✅ Dil Desteği (TR/EN)</div>
+                    <div>✅ Dark Theme / Light Theme</div>
+                    <div>✅ Typewriter (Yazı Yazma) Efekti</div>
+                    <div>✅ Canlı Hava Durumu API</div>
+                    <div>✅ CV İndir & QR Kod</div>
+                    <div>✅ Scroll Progress Bar</div>
+                    <div>✅ Back to Top Butonu</div>
+                    <div>✅ 3D Tilt (Eğilme) Efekti</div>
+                    <div>✅ Yazdırma Tasarımı (Ctrl + P)</div>
+                    <div>✅ Konami Code (Klavyeden 'enes' yaz)</div>
+                    <div>✅ Skeleton Loading & Custom Cursor</div>
+                    <div>✅ Canvas İnteraktif Arkaplan</div>
+                    <br>
+                    <div class="cmd-success" style="font-weight:bold;">★ Best of Bests - TERMINAL CLI ★</div>
+                `;
                 break;
 
             case 'clear':
@@ -114,49 +136,18 @@ function initTerminal() {
             case 'sudo':
                 response = "<span class='cmd-error'>Yetkisiz erişim! Sen hoca değilsin :)</span>";
                 break;
-            
-            case 'konami':
-                response = "<span class='cmd-success'>e,n,e,s</span>";
-                break;
-            
-                case 'bonus':
-                    response = `
-                        <div class="cmd-info">Bonus komutunu buldunuz! Tebrikler :)</div>
-                        <div>İşte projeye eklenen ekstra özellikler:</div>
-                        <br>
-                        <div>✅ PWA (Mobil Uygulama)</div>
-                        <div>✅ Scroll Reveal Animasyonları</div>
-                        <div>✅ Dil Desteği (TR/EN)</div>
-                        <div>✅ Dark Theme / Light Theme</div>
-                        <div>✅ Typewriter (Yazı Yazma) Efekti</div>
-                        <div>✅ Canlı Hava Durumu API</div>
-                        <div>✅ CV İndir & QR Kod</div>
-                        <div>✅ Scroll Progress Bar</div>
-                        <div>✅ Back to Top Butonu</div>
-                        <div>✅ 3D Tilt (Eğilme) Efekti</div>
-                        <div>✅ Yazdırma Tasarımı (Ctrl + P)</div>
-                        <div>✅ Konami Code (Klavyeden 'enes' yaz)</div>
-                        <div>✅ Skeleton Loading & Custom Cursor</div>
-                        <div>✅ Canvas İnteraktif Arkaplan</div>
-                        <br>
-                        <div class="cmd-success" style="font-weight:bold;">★ Best of Bests - TERMINAL CLI ★</div>
-                    `;
-                    break;
 
             default:
                 response = `<span class='cmd-error'>Komut bulunamadı: ${cmd}</span>. 'help' yazın.`;
         }
 
-        // Cevabı Ekrana Bas
         const respLine = document.createElement('div');
         respLine.className = 'output-line';
         respLine.innerHTML = response;
         outputDiv.appendChild(respLine);
 
-        // Kaydır
         bodyDiv.scrollTop = bodyDiv.scrollHeight;
     }
 }
 
-// Otomatik Başlat (App.js'e gerek kalmadan)
 document.addEventListener('DOMContentLoaded', initTerminal);

@@ -1,5 +1,6 @@
 // en başta bizim çok daha önce yaptığımız arka plan renginin değişmesi varsayılan olarak var fakat artık color-switcher ile değiştirebiliyoruz.
 // fakat değiştirdiğimiz an varsayılan renk değiştirme kodları bloke ediliyor, düzeltilemedi.
+// artik duzeltildi.
 
 function initColorSwitcher() {
     const settingsToggle = document.getElementById('settings-toggle');
@@ -20,7 +21,8 @@ function initColorSwitcher() {
         blue:   { primary: '#3b82f6', secondary: '#2563eb' }
     };
 
-    const setThemeColor = (colorName) => {
+    // Fonksiyona 'showToast' parametresi eklendi (Varsayılan: true)
+    const setThemeColor = (colorName, showToast = true) => {
         const theme = themes[colorName];
         if (theme) {
             root.style.setProperty('--primary-color', theme.primary);
@@ -34,18 +36,31 @@ function initColorSwitcher() {
                     circle.classList.add('active');
                 }
             });
+
+        
+            if(showToast && typeof Toast !== 'undefined') {
+                
+                const displayColor = colorName.charAt(0).toUpperCase() + colorName.slice(1);
+                
+                
+                const msg = (typeof currentLang !== 'undefined' && currentLang === 'en') 
+                    ? `Theme Changed: ${displayColor} `
+                    : `Tema Değiştirildi: ${displayColor} `;
+                
+                Toast.show(msg, 'success');
+            }
         }
     };
 
     themeCircles.forEach(circle => {
         circle.addEventListener('click', (e) => {
             const color = e.target.getAttribute('data-color');
-            setThemeColor(color);
+            setThemeColor(color, true); // Tıklayınca bildirim göster
         });
     });
 
     const savedColor = localStorage.getItem('siteColor') || 'purple';
-    setThemeColor(savedColor);
+    setThemeColor(savedColor, false); // Sayfa ilk açıldığında bildirim gösterme
 }
 
 // yine terminal gibi otomatik başlatıyoruz.
