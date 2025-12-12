@@ -5,7 +5,7 @@
     "title_en": "Container Optimization Algorithm (TÜBİTAK Winner)",
     "description": "Python ile geliştirilen, kargo yerleşimini optimize ederek maliyeti düşüren ve TÜBİTAK yarışmasında birincilik ödülü alan yapay zeka destekli algoritma.",
     "description_en": "AI-supported algorithm developed using Python that optimizes cargo placement to reduce costs, winning first prize in the TÜBİTAK competition.",
-    "image": "https://via.placeholder.com/600x400/f59e0b/ffffff?text=TUBITAK+Winner",
+    "image": "assets/tubitak.png",
     "link": "#",
     "category": "masaustu"
   },

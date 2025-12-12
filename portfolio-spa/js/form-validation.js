@@ -1,3 +1,4 @@
+// emajil.js konfigürasyonu eklendi.
 function setupContactForm() {
     const form = document.getElementById('contact-form');
     
@@ -5,6 +6,10 @@ function setupContactForm() {
         form.addEventListener('submit', (e) => {
             e.preventDefault(); // Sayfa yenilemesini engellemek icin.
             
+            const btn = form.querySelector('button');
+            const originalText = btn.innerText;
+            
+
             const nameInput = document.getElementById('name');
             const emailInput = document.getElementById('email');
             const messageInput = document.getElementById('message');
@@ -12,12 +17,12 @@ function setupContactForm() {
 
             let isValid = true;
 
-            // --- DİL DESTEĞİ İÇİN DEĞİŞKENLERİ TANIMLIYORUZ ---
-            const errName = currentLang === 'en' ? 'Name cannot be empty.' : 'İsim alanı boş bırakılamaz.';
-            const errEmailEmpty = currentLang === 'en' ? 'Email cannot be empty.' : 'E-posta alanı boş bırakılamaz.';
-            const errEmailInvalid = currentLang === 'en' ? 'Please enter a valid email address.' : 'Geçerli bir e-posta adresi giriniz.';
-            const errMsgLength = currentLang === 'en' ? 'Message must be at least 10 characters.' : 'Mesajınız en az 10 karakter olmalıdır.';
-            const successMsg = currentLang === 'en' ? '<strong>Awesome!</strong> Message sent successfully!!!' : '<strong>Harika!</strong> Mesajınız başarıyla gönderildi!!!';
+            // DİL DESTEĞİ İÇİN DEĞİŞKENLERİ TANIMLIYORUZ 
+            const errName = (typeof currentLang !== 'undefined' && currentLang === 'en') ? 'Name cannot be empty.' : 'İsim alanı boş bırakılamaz.';
+            const errEmailEmpty = (typeof currentLang !== 'undefined' && currentLang === 'en') ? 'Email cannot be empty.' : 'E-posta alanı boş bırakılamaz.';
+            const errEmailInvalid = (typeof currentLang !== 'undefined' && currentLang === 'en') ? 'Please enter a valid email address.' : 'Geçerli bir e-posta adresi giriniz.';
+            const errMsgLength = (typeof currentLang !== 'undefined' && currentLang === 'en') ? 'Message must be at least 10 characters.' : 'Mesajınız en az 10 karakter olmalıdır.';
+            // successMsg değişkeni EmailJS başarılı olursa kullanılacak
 
             if (nameInput.value.trim() === '') {
                 setError(nameInput, errName);
@@ -46,21 +51,52 @@ function setupContactForm() {
 
             // isvalid kontrolü yapıyoruz ve backend olmadıgından text olarak success
             if (isValid) {
-                
-                if(typeof Toast !== 'undefined') {
-                    const msg = (typeof currentLang !== 'undefined' && currentLang === 'en') 
-                        ? 'Message sent successfully!' 
-                        : 'Mesajınız başarıyla gönderildi!';
-                    
-                    Toast.show(msg, 'success');
-                }
+                // EmailJS Başlangıç
+                btn.innerText = (typeof currentLang !== 'undefined' && currentLang === 'en') ? 'Sending...' : 'Gönderiliyor...';
+                btn.disabled = true;
 
-                form.reset(); // çizgileri kaldırmak için
-                document.querySelectorAll('.form-group').forEach(group => group.classList.remove('success'))
-                setTimeout(() => {
-                    document.querySelectorAll('.form-group').forEach(group => group.classList.remove('success'));
-                    msgDiv.innerHTML = '';
-                }, 5000);
+                const serviceID = 'service_neyaj08'; 
+                const templateID = 'template_ezq8bss'; 
+
+                emailjs.sendForm(serviceID, templateID, form)
+                    .then(() => {
+                        // Başarılı
+                        btn.innerText = (typeof currentLang !== 'undefined' && currentLang === 'en') ? 'Sent!' : 'Gönderildi!';
+                        btn.style.backgroundColor = '#22c55e';
+
+                        if(typeof Toast !== 'undefined') {
+                            const msg = (typeof currentLang !== 'undefined' && currentLang === 'en') 
+                                ? 'Message sent successfully!' 
+                                : 'Mesajınız başarıyla gönderildi!';
+                            
+                            Toast.show(msg, 'success');
+                        }
+
+                        form.reset(); // çizgileri kaldırmak için
+                        document.querySelectorAll('.form-group').forEach(group => group.classList.remove('success'));
+                        
+                        setTimeout(() => {
+                            btn.innerText = originalText;
+                            btn.disabled = false;
+                            btn.style.backgroundColor = ''; // Rengi sıfırla
+                            if(msgDiv) msgDiv.innerHTML = '';
+                        }, 5000);
+                    }, (err) => {
+                        // Hata
+                        console.error('EmailJS Error:', err);
+                        btn.innerText = (typeof currentLang !== 'undefined' && currentLang === 'en') ? 'Error!' : 'Hata!';
+                        btn.style.backgroundColor = '#ef4444';
+
+                        if(typeof Toast !== 'undefined') {
+                            Toast.show((typeof currentLang !== 'undefined' && currentLang === 'en') ? 'Failed to send message.' : 'Mesaj gönderilemedi.', 'error');
+                        }
+
+                        setTimeout(() => {
+                            btn.innerText = originalText;
+                            btn.disabled = false;
+                            btn.style.backgroundColor = '';
+                        }, 3000);
+                    });
             }
         });
     }
