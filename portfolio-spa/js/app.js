@@ -54,13 +54,25 @@ document.addEventListener('DOMContentLoaded', () => {
         let hash = window.location.hash || '#anasayfa';
         let pageName = hash.slice(1); // Burada # işaretini dikkate almasın diye slice kullandık
 
-        // Sayfa içeriğini belirle (DİL DESTEĞİ EKLENDİ)
         if (pageName === 'projelerim') {
-            await loadProjects(); // Aşağıda tanımlanıcak olan loadProjects fonksiyonunu çağırıp projeleri yüklemesi için.
+            // Projeler Sayfası
+            if(typeof loadProjects === 'function') await loadProjects(); 
+            
+        } else if (pageName === 'notlar') {
+            // Notlar Sayfası (Sadece buradaysa yükle!)
+            if(typeof loadNotesPage === 'function') loadNotesPage();
+
+        } else if (pageName === 'blog') {
+            // Blog Sayfası (Eğer varsa)
+            if(typeof loadBlog === 'function') await loadBlog();
+
         } else if (pages[currentLang] && pages[currentLang][pageName]) {
-            appContainer.innerHTML = pages[currentLang][pageName]; // Bu kısımda projeler ve anasayfa hariç kısımlara da gidilebilir, bu yüzden pages.js'de tanımladığımız kısımlardan almasını sağlıyoruz.
+            // Normal Sayfalar (Hakkımda, İletişim vb.)
+            appContainer.innerHTML = pages[currentLang][pageName]; 
+            
         } else {
-            appContainer.innerHTML = pages[currentLang]['anasayfa']; // Varsayılan olarak anasayfayı yapıyoruz.
+            // Hiçbiri yoksa Anasayfa
+            appContainer.innerHTML = pages[currentLang]['anasayfa']; 
         }
 
         window.scrollTo(0, 0); // Sayfa yüklenince dinamik olabilmesi için en üste gitmesi gerek bu yüzden pencereyi en yukarıya kaydırıyoruz.
@@ -77,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
             activeBtn.classList.add('active-link'); // ekle
         }
 
-        
         if (pageName === 'iletisim') setupContactForm(); // İletişim butonunda iletişim sekmesi kullanımı için.
 
         setTimeout(initScrollReveal, 100); // Yeni içerik yüklendiğinde Scroll Reveal'ı yeniden başlat.

@@ -19,7 +19,6 @@ function initTiltEffect() {
             isHovering = true;
             console.log(`✅ Kart ${index + 1}: Mouse geldi`);
             
-            // Sadece shadow için transition
             this.style.transition = 'box-shadow 0.3s ease, border-color 0.3s ease';
         });
         
@@ -30,14 +29,13 @@ function initTiltEffect() {
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
             
-            // Merkeze göre normalize (-1 ile +1)
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
             
-            const rotateY = ((x - centerX) / centerX) * 20; // Max 20 derece
+            const rotateY = ((x - centerX) / centerX) * 20; 
             const rotateX = ((centerY - y) / centerY) * 20;
             
-            // DOĞRUDAN transform uygula (perspective inline)
+
             this.style.transform = `
                 translateY(-12px) 
                 translateZ(50px)
@@ -46,7 +44,6 @@ function initTiltEffect() {
                 scale3d(1.03, 1.03, 1.03)
             `;
             
-            // Debug
             if (Math.random() < 0.05) {
                 console.log(`🎮 rotateX: ${rotateX.toFixed(1)}°, rotateY: ${rotateY.toFixed(1)}°`);
             }
@@ -56,10 +53,10 @@ function initTiltEffect() {
             isHovering = false;
             console.log(`❌ Kart ${index + 1}: Mouse ayrıldı - RESET`);
             
-            // Smooth dönüş
+
             this.style.transition = 'all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
             
-            // TAM SIFIRLAMA
+
             this.style.transform = `
                 translateY(0px) 
                 translateZ(0px)
@@ -68,7 +65,7 @@ function initTiltEffect() {
                 scale3d(1, 1, 1)
             `;
             
-            // 1 saniye sonra kontrol et
+
             setTimeout(() => {
                 console.log(`🔍 Kart ${index + 1} son durum:`, this.style.transform);
             }, 700);
@@ -78,14 +75,13 @@ function initTiltEffect() {
     console.log('✨ 3D Tilt efekti aktif!');
 }
 
-// Çalıştır
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initTiltEffect);
 } else {
     initTiltEffect();
 }
 
-// Manuel test için
+// Test fonksiyonu - Konsolda manuel test için
 window.testTilt = function() {
     const card = document.querySelector('.project-card, .skill-card');
     if (card) {

@@ -1,14 +1,15 @@
 /* İleride kullanılacak card css kısmı, değiştirilebilir. */
+/* Hata oldu ama asla duzeltemedim.*/
 
 .project-card,
 .skill-card {
     background: #ffffff;
-    border-radius: 20px; /* Daha modern yuvarlaklık */
+    border-radius: 20px; 
     padding: 2rem;
     margin-bottom: 2rem;
     border: 1px solid rgba(0,0,0,0.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* Çok hafif, modern gölge */
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Yaylanma (Spring) efekti */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
     position: relative;
     /* tilted efekti için */
 
@@ -19,11 +20,9 @@
 
 
 
-/* Hover Efekti: Kart yukarı fırlar, parlar ve gölgesi renklenir */
 
 .project-card:hover,
 .skill-card:hover {
-    /* tilted efekti için */
     /*  transform: translateY(-10px) scale(1.02); geçici olarak devre disi aliyorum cünkü hata veriyor */
     box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
     border-color: rgba(79, 70, 229, 0.3);
@@ -114,7 +113,6 @@
     font-size: 1.1rem;
 }
 
-/* Şeffaf Buton (Bana Ulaş) */
 .btn-outline {
 
     background: transparent;
@@ -132,7 +130,6 @@
 
 }
 
-/* Sosyal İkonlar (Eksik kalmasın) */
 .socials {
 
     display: flex;

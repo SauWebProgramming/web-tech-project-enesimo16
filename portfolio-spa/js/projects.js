@@ -1,38 +1,45 @@
-// BURADA FETCH İLE projects.json DOSYASINI ÇEKİP PROJELERİ YÜKLEYECEĞİZ.
+// PROJELERİ YÜKLEME
 async function loadProjects() {
     const appContainer = document.getElementById('app-container');
-    const loadingText = currentLang === 'en' ? 'Projects Loading...' : 'Projeler Yükleniyor...';
-    appContainer.innerHTML = `<h2 style="text-align:center;">${loadingText}</h2>`;
-
-    /* DENEME SKELETON */
-
-    // Yükleniyor yazısı yerine 3 tane sahte kutu oluşturuyoruz
-    let skeletonHTML = `<h2>${(typeof currentLang !== 'undefined' && currentLang === 'en') ? 'My Projects' : 'Projelerim'}</h2><div class="projects-grid">`;
+    const isEn = (typeof currentLang !== 'undefined' && currentLang === 'en');
     
-    for(let i=0; i<20; i++) {
-        skeletonHTML += `
-            <div class="skeleton-card">
-                <div class="skeleton skeleton-img"></div>
-                <div class="skeleton skeleton-title"></div>
-                <div class="skeleton skeleton-text"></div>
-                <div class="skeleton skeleton-text" style="width: 80%;"></div>
-                <div class="skeleton skeleton-btn"></div>
-            </div>
-        `;
-    }
-    skeletonHTML += '</div>';
-    appContainer.innerHTML = skeletonHTML;
+    // SKELETON YÜKLEME EKRANI
+    const skeletonCard = `
+        <div class="project-card" style="border: none; box-shadow: none; background: #fff;">
+            <div style="width: 100%; height: 200px; background: #e0e0e0; border-radius: 10px; margin-bottom: 1rem; animation: pulse 1.5s infinite ease-in-out;"></div>
+            <div style="width: 70%; height: 25px; background: #e0e0e0; border-radius: 5px; margin-bottom: 10px; animation: pulse 1.5s infinite ease-in-out;"></div>
+            <div style="width: 90%; height: 15px; background: #e0e0e0; border-radius: 5px; margin-bottom: 5px; animation: pulse 1.5s infinite ease-in-out;"></div>
+            <div style="width: 50%; height: 15px; background: #e0e0e0; border-radius: 5px; animation: pulse 1.5s infinite ease-in-out;"></div>
+        </div>
+    `;
 
-    /* DENEME BİTTİ */
+    const loadingTitle = isEn ? 'Projects Loading...' : 'Projeler Yükleniyor...';
 
+    appContainer.innerHTML = `
+        <h2 class="text-center" style="opacity: 0.6;">${loadingTitle}</h2>
+        <div class="filter-container" style="opacity: 0.5; pointer-events: none;">
+             <button class="filter-btn active" style="background:#e0e0e0; color:transparent; border:none; width:80px; height:40px; border-radius:50px;"></button>
+             <button class="filter-btn" style="background:#e0e0e0; color:transparent; border:none; width:80px; height:40px; border-radius:50px;"></button>
+             <button class="filter-btn" style="background:#e0e0e0; color:transparent; border:none; width:80px; height:40px; border-radius:50px;"></button>
+        </div>
+        <div class="projects-grid">
+            ${skeletonCard.repeat(6)} 
+        </div>
+        <style>
+            @keyframes pulse {
+                0% { opacity: 0.5; }
+                50% { opacity: 1; }
+                100% { opacity: 0.5; }
+            }
+        </style>
+    `;
 
+    await new Promise(r => setTimeout(r, 1500)); 
 
     try {
         const response = await fetch('./data/projects.json');
         const projects = await response.json();
 
-        // Metinler
-        const isEn = (typeof currentLang !== 'undefined' && currentLang === 'en');
         const txtAll = isEn ? 'All' : 'Tümü';
         const txtWeb = isEn ? 'Web Projects' : 'Web Projeleri';
         const txtDesktop = isEn ? 'Desktop / Game' : 'Masaüstü / Oyun';
@@ -49,7 +56,6 @@ async function loadProjects() {
             <div class="projects-grid">
         `;
         
-        // HTML oluşturma döngüsü
         projects.forEach(proj => {
             const title = isEn ? proj.title_en : proj.title;
             const desc = isEn ? proj.description_en : proj.description;
@@ -67,26 +73,35 @@ async function loadProjects() {
         html += '</div>';
         appContainer.innerHTML = html;
 
-        // --- YARDIMCI FONKSİYONLARI ÇAĞIR ---
+
         if(typeof initScrollReveal === 'function') initScrollReveal(); 
         if(typeof setupFilters === 'function') setupFilters();
         
-        // Modal Bağlantısını Yap
         attachModalEvents(projects);
 
-        // --- KRİTİK EKLEME: 3D TILT EFEKTİNİ BAŞLAT ---
-        // Projeler HTML'e eklendiği için artık kartlar var ve tilt çalışabilir.
         if(typeof initTiltEffect === 'function') initTiltEffect();
 
     } catch (err) {
         console.error(err);
-        const isEn = (typeof currentLang !== 'undefined' && currentLang === 'en');
         const errorText = isEn ? 'Error loading projects.' : 'Projeler yüklenirken hata oluştu.';
         appContainer.innerHTML = `<h3 style="color:red; text-align:center;">${errorText}</h3>`;
     }
 }
 
-// --- MODAL OLAYLARINI BAĞLAYAN FONKSİYON ---
+
+
+
+
+
+
+
+
+// *********************************************** //
+
+
+
+
+
 function attachModalEvents(projects) {
     const modal = document.getElementById('project-modal');
     if (!modal) return; 
@@ -95,13 +110,11 @@ function attachModalEvents(projects) {
     const modalTitle = document.getElementById('modal-title');
     const modalDesc = document.getElementById('modal-desc');
     const modalRepo = document.getElementById('modal-repo');
-    
     const buttons = document.querySelectorAll('.project-btn');
 
     buttons.forEach((btn, index) => {
         btn.addEventListener('click', (e) => {
             e.preventDefault(); 
-
             const proj = projects[index];
             const isEn = (typeof currentLang !== 'undefined' && currentLang === 'en');
 
@@ -109,7 +122,6 @@ function attachModalEvents(projects) {
             modalTitle.innerText = isEn ? proj.title_en : proj.title;
             modalDesc.innerText = isEn ? proj.description_en : proj.description;
             
-            // Link kontrolü: Eğer link varsa göster, yoksa gizle
             if (modalRepo) {
                 if (proj.link && proj.link !== "#") {
                     modalRepo.href = proj.link;
@@ -118,7 +130,6 @@ function attachModalEvents(projects) {
                     modalRepo.style.display = 'none';
                 }
             }
-
             modal.classList.add('show');
             document.body.style.overflow = 'hidden'; 
         });
@@ -129,18 +140,12 @@ function attachModalEvents(projects) {
 
 function setupModalCloseLogic(modal) {
     const closeBtn = document.querySelector('.close-btn');
-
     const closeModal = () => {
         modal.classList.remove('show');
         document.body.style.overflow = 'auto'; 
     };
-
     if(closeBtn) closeBtn.onclick = closeModal;
-
     window.onclick = (e) => {
-        if (e.target === modal) {
-            closeModal();
-        }
+        if (e.target === modal) closeModal();
     };
 }
-
