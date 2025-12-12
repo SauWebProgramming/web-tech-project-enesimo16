@@ -26,6 +26,12 @@ const Toast = {
             <span class="toast-message">${message}</span>
         `;
         this.container.appendChild(toastEl);
+
+        // ses efektleri success
+        if (window.playSuccessSound && (type === 'success' || type === 'info')) {
+            window.playSuccessSound();
+        }
+
         setTimeout(() => {
             toastEl.classList.add('show');
         }, 10)

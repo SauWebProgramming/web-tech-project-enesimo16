@@ -1,4 +1,5 @@
 /* İleride kullanılacak card css kısmı, değiştirilebilir. */
+
 .project-card,
 .skill-card {
     background: #ffffff;
@@ -9,31 +10,33 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* Çok hafif, modern gölge */
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Yaylanma (Spring) efekti */
     position: relative;
-    overflow: hidden;
-
     /* tilted efekti için */
+
     transform-style: preserve-3d;
     perspective: 1000px;
-    
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+
+
 /* Hover Efekti: Kart yukarı fırlar, parlar ve gölgesi renklenir */
+
 .project-card:hover,
 .skill-card:hover {
-
     /* tilted efekti için */
-    /*  transform: translateY(-10px) scale(1.02); geçici olarak devre disi aliyorum cünkü hata veriyor */ 
+    /*  transform: translateY(-10px) scale(1.02); geçici olarak devre disi aliyorum cünkü hata veriyor */
     box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
     border-color: rgba(79, 70, 229, 0.3);
 }
+
+
 
 .project-card img {
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
-
 /* Grid kullanılarak kolaylaştırıldı hem de projede grid de kullanmış olmak için kullandım. */
+
 .projects-grid,
 .skills-grid {
     display: grid;
@@ -42,41 +45,43 @@
     margin-top: 3rem;
 }
 
+
 /* Butonlar */
+
 .btn {
+
     display: inline-block;
     padding: 1rem 2.5rem;
-    
-    /* Canlı Gradient Arkaplan */
     background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-    background-size: 200% auto; /* Hover animasyonu için */
-    
+    background-size: 200% auto; 
     color: white;
     text-decoration: none;
-    border-radius: 50px; /* Tam yuvarlak (Pill shape) */
+    border-radius: 50px; 
     font-weight: 600;
     font-size: 1rem;
     letter-spacing: 0.5px;
-    
     transition: all 0.4s ease;
     border: none;
     cursor: pointer;
-    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3); /* Neon Parlama */
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3); 
     position: relative;
     overflow: hidden;
+
 }
 
 .btn:hover {
     transform: translateY(-3px);
-    background-position: right center; /* Renk akışı animasyonu */
-    box-shadow: 0 15px 30px rgba(79, 70, 229, 0.5); /* Güçlü parlama */
+     background-position: right center; 
+    box-shadow: 0 15px 30px rgba(79, 70, 229, 0.5); 
+
 }
+
 
 .btn:active {
     transform: translateY(-1px);
+
 }
 
-/* pages.js inline satırları düzeltme ve Yardımcı Sınıflar */
 
 .text-center { text-align: center; }
 .py-4 { padding: 4rem 0; }
@@ -84,12 +89,15 @@
 .w-100 { width: 100%; }
 .mx-auto-600 { max-width: 600px; margin: 0 auto; }
 
+
 .typewriter-wrapper {
+
     min-height: 1.5em;
     font-size: 1.3rem;
-    color: #4f46e5; /* İndigo */
+    color: #4f46e5; 
     font-weight: 700;
     margin-top: 1rem;
+
 }
 
 .student-id {
@@ -98,37 +106,44 @@
     color: #6366f1;
     font-weight: bold;
     letter-spacing: 1px;
+
 }
 
-.subtitle { 
-    opacity: 0.8; 
+.subtitle {
+    opacity: 0.8;
     font-size: 1.1rem;
 }
 
 /* Şeffaf Buton (Bana Ulaş) */
 .btn-outline {
+
     background: transparent;
     border: 2px solid #6366f1;
     color: #6366f1;
     margin-left: 10px;
     box-shadow: none;
+
 }
 
 .btn-outline:hover {
     background: #6366f1;
     color: white;
     box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+
 }
 
 /* Sosyal İkonlar (Eksik kalmasın) */
 .socials {
+
     display: flex;
     justify-content: center;
     gap: 1.5rem;
     margin-top: 2rem;
+
 }
 
 .socials a {
+
     color: #475569;
     font-weight: 600;
     padding: 0.8rem 2rem;
@@ -137,6 +152,7 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
     border: 1px solid transparent;
+
 }
 
 .socials a:hover {
@@ -146,17 +162,14 @@
     border-color: #4f46e5;
 }
 
-
-
-
 /* Aktif link durumu */
-
 .nav-links a.active-link {
     color: #667eea;
     font-weight: bold;
+
 }
+
 
 .nav-links a.active-link::before {
     width: 100%;
 }
-

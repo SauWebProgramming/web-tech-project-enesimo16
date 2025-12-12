@@ -9,7 +9,7 @@ async function loadProjects() {
     // Yükleniyor yazısı yerine 3 tane sahte kutu oluşturuyoruz
     let skeletonHTML = `<h2>${(typeof currentLang !== 'undefined' && currentLang === 'en') ? 'My Projects' : 'Projelerim'}</h2><div class="projects-grid">`;
     
-    for(let i=0; i<3; i++) {
+    for(let i=0; i<20; i++) {
         skeletonHTML += `
             <div class="skeleton-card">
                 <div class="skeleton skeleton-img"></div>
@@ -28,45 +28,38 @@ async function loadProjects() {
 
 
     try {
-
-        await new Promise(resolve => setTimeout(resolve, 1000)); // Simüle edilmiş gecikme
-
-
         const response = await fetch('./data/projects.json');
         const projects = await response.json();
 
-        // Buton Metinleri Dile Göre
-        const txtAll = currentLang === 'en' ? 'All' : 'Tümü';
-        const txtWeb = currentLang === 'en' ? 'Web Projects' : 'Web Projeleri';
-        const txtDesktop = currentLang === 'en' ? 'Desktop / Game' : 'Masaüstü / Oyun';
-        const txtTitle = currentLang === 'en' ? 'My Projects' : 'Projelerim';
-        const txtBtn = currentLang === 'en' ? 'View Details' : 'İncele';
+        // Metinler
+        const isEn = (typeof currentLang !== 'undefined' && currentLang === 'en');
+        const txtAll = isEn ? 'All' : 'Tümü';
+        const txtWeb = isEn ? 'Web Projects' : 'Web Projeleri';
+        const txtDesktop = isEn ? 'Desktop / Game' : 'Masaüstü / Oyun';
+        const txtTitle = isEn ? 'My Projects' : 'Projelerim';
+        const txtBtn = isEn ? 'View Details' : 'İncele';
 
-        // 1. Filtre Butonları HTML'i
         let html = `
             <h2>${txtTitle}</h2>
-            
             <div class="filter-container">
                 <button class="filter-btn active" data-filter="all">${txtAll}</button>
                 <button class="filter-btn" data-filter="web">${txtWeb}</button>
                 <button class="filter-btn" data-filter="masaustu">${txtDesktop}</button>
             </div>
-
             <div class="projects-grid">
         `;
         
-        // 2. Proje Kartlarını Oluştur (Dile göre içerik seçimi)
+        // HTML oluşturma döngüsü
         projects.forEach(proj => {
-            const title = currentLang === 'en' ? proj.title_en : proj.title;
-            const desc = currentLang === 'en' ? proj.description_en : proj.description;
+            const title = isEn ? proj.title_en : proj.title;
+            const desc = isEn ? proj.description_en : proj.description;
 
-            // Performans için resimlere lazy loading ekledik.
             html += `
                 <article class="project-card reveal" data-category="${proj.category}">
-                    <img src="${proj.image}" alt="${title}" style="width:100%; height:200px; object-fit:cover; border-radius:10px; margin-bottom:1rem;" loading="lazy"> 
+                    <img src="${proj.image}" alt="${title}" loading="lazy" style="width:100%; height:200px; object-fit:cover; border-radius:10px; margin-bottom:1rem;"> 
                     <h3 style="margin-bottom:0.5rem;">${title}</h3>
                     <p style="color: inherit; opacity: 0.8; margin-bottom:1rem; font-size:0.95rem;">${desc}</p>
-                    <a href="${proj.link}" class="btn" style="padding:0.5rem 1.5rem; font-size:0.9rem;">${txtBtn}</a>
+                    <a href="${proj.link}" class="btn project-btn" style="padding:0.5rem 1.5rem; font-size:0.9rem;">${txtBtn}</a>
                 </article>
             `;
         });
@@ -74,16 +67,80 @@ async function loadProjects() {
         html += '</div>';
         appContainer.innerHTML = html;
 
-        // İçerik geldikten hemen sonra animasyonları başlat
-        initScrollReveal(); 
+        // --- YARDIMCI FONKSİYONLARI ÇAĞIR ---
+        if(typeof initScrollReveal === 'function') initScrollReveal(); 
+        if(typeof setupFilters === 'function') setupFilters();
+        
+        // Modal Bağlantısını Yap
+        attachModalEvents(projects);
 
-        // Filtreleme Olaylarını Başlat
-        setupFilters();
-
+        // --- KRİTİK EKLEME: 3D TILT EFEKTİNİ BAŞLAT ---
+        // Projeler HTML'e eklendiği için artık kartlar var ve tilt çalışabilir.
+        if(typeof initTiltEffect === 'function') initTiltEffect();
 
     } catch (err) {
         console.error(err);
-        const errorText = currentLang === 'en' ? 'Error loading projects.' : 'Projeler yüklenirken hata oluştu.';
+        const isEn = (typeof currentLang !== 'undefined' && currentLang === 'en');
+        const errorText = isEn ? 'Error loading projects.' : 'Projeler yüklenirken hata oluştu.';
         appContainer.innerHTML = `<h3 style="color:red; text-align:center;">${errorText}</h3>`;
     }
 }
+
+// --- MODAL OLAYLARINI BAĞLAYAN FONKSİYON ---
+function attachModalEvents(projects) {
+    const modal = document.getElementById('project-modal');
+    if (!modal) return; 
+
+    const modalImg = document.getElementById('modal-img');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDesc = document.getElementById('modal-desc');
+    const modalRepo = document.getElementById('modal-repo');
+    
+    const buttons = document.querySelectorAll('.project-btn');
+
+    buttons.forEach((btn, index) => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault(); 
+
+            const proj = projects[index];
+            const isEn = (typeof currentLang !== 'undefined' && currentLang === 'en');
+
+            modalImg.src = proj.image;
+            modalTitle.innerText = isEn ? proj.title_en : proj.title;
+            modalDesc.innerText = isEn ? proj.description_en : proj.description;
+            
+            // Link kontrolü: Eğer link varsa göster, yoksa gizle
+            if (modalRepo) {
+                if (proj.link && proj.link !== "#") {
+                    modalRepo.href = proj.link;
+                    modalRepo.style.display = 'inline-flex';
+                } else {
+                    modalRepo.style.display = 'none';
+                }
+            }
+
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden'; 
+        });
+    });
+
+    setupModalCloseLogic(modal);
+}
+
+function setupModalCloseLogic(modal) {
+    const closeBtn = document.querySelector('.close-btn');
+
+    const closeModal = () => {
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto'; 
+    };
+
+    if(closeBtn) closeBtn.onclick = closeModal;
+
+    window.onclick = (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    };
+}
+
