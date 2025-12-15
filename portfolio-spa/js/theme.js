@@ -1,9 +1,11 @@
-// Dark mode geçişi
+// Dark mode düzenlendi, toastr eklendi.
+
+
 const themeBtn = document.getElementById('theme-toggle');
 const curtainOverlay = document.getElementById('curtain-overlay');
 const body = document.body;
 
-// İlk sayfa açıldığında temayı kontrol ederek ona göre ayarlama
+
 const currentTheme = localStorage.getItem('theme');
 if (currentTheme === 'dark') {
     body.classList.add('dark-mode');
@@ -11,23 +13,37 @@ if (currentTheme === 'dark') {
 }
 
 themeBtn.addEventListener('click', () => {
-    // Perde
     curtainOverlay.classList.add('active');
 
-        setTimeout(() => {
-            body.classList.toggle('dark-mode');
+    setTimeout(() => {
+        body.classList.toggle('dark-mode');
+        
+        const isDark = body.classList.contains('dark-mode');
 
-            if (body.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-                themeBtn.innerHTML = '☀️';
+        if (isDark) {
+            localStorage.setItem('theme', 'dark');
+            themeBtn.innerHTML = '☀️';
+        } else {
+            localStorage.setItem('theme', 'light');
+            themeBtn.innerHTML = '🌙';
+        }
+
+        if(typeof Toast !== 'undefined') {
+            const isEn = (typeof currentLang !== 'undefined' && currentLang === 'en');
+            
+            let msg;
+            if (isDark) {
+                msg = isEn ? 'Dark Mode 🌙' : 'Koyu Tema 🌙';
             } else {
-                localStorage.setItem('theme', 'light');
-                themeBtn.innerHTML = '🌙';
+                msg = isEn ? 'Light Mode ☀️' : 'Açık Tema ☀️';
             }
+            
+            Toast.show(msg, 'info');
+        }
 
-            setTimeout(() => {
-                curtainOverlay.classList.remove('active');
-            }, 200); 
+        setTimeout(() => {
+            curtainOverlay.classList.remove('active');
+        }, 200); 
 
-        }, 800); 
+    }, 800); 
 });

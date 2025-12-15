@@ -1,30 +1,26 @@
-// --- CANVAS İNTERAKTİF ARKAPLAN (NETWORK EFEKTİ) ---
+// CANVAS İNTERAKTİF ARKAPLAN 
 // Bonus Puan için Canvas ve matematiksel çizim kullanılmıştır.
+// Gemini yardimi alinmistir.
 
 const canvas = document.getElementById('starfield');
-// Eğer canvas HTML'de yoksa veya bu dosya yanlış sırada yüklendiyse durdur
 if (!canvas) {
     console.error("Canvas element #starfield bulunamadı.");
-    // Eğer body arka planı canlı değilse diye fallback ekleyebiliriz:
-    // document.body.style.background = '#1e293b'; 
 } else {
     const ctx = canvas.getContext('2d');
     let W, H;
     let particles = [];
     let mouse = { x: 0, y: 0 };
 
-    // Partikül (Nokta) Sınıfı
     class Particle {
         constructor() {
             this.x = Math.random() * W;
             this.y = Math.random() * H;
-            this.radius = Math.random() * 2 + 1; // 1 ile 3 arasında boyut
-            this.vx = Math.random() * 1 - 0.5; // Yatay hız (-0.5 ile 0.5)
-            this.vy = Math.random() * 1 - 0.5; // Dikey hız
+            this.radius = Math.random() * 2 + 1; 
+            this.vx = Math.random() * 1 - 0.5; 
+            this.vy = Math.random() * 1 - 0.5; 
         }
 
         draw() {
-            // Dark Mode rengine duyarlı çizim
             const color = document.body.classList.contains('dark-mode') ? '#38bdf8' : '#667eea';
             ctx.fillStyle = color;
             ctx.beginPath();
@@ -33,7 +29,6 @@ if (!canvas) {
         }
 
         update() {
-            // Sınırlara çarpınca yön değiştir
             if (this.x < 0 || this.x > W) this.vx = -this.vx;
             if (this.y < 0 || this.y > H) this.vy = -this.vy;
 
@@ -42,7 +37,6 @@ if (!canvas) {
         }
     }
 
-    // Canvas'ı ve Partikülleri Başlat
     function initCanvas() {
         W = window.innerWidth;
         H = window.innerHeight;
@@ -50,16 +44,15 @@ if (!canvas) {
         canvas.height = H;
 
         particles = [];
-        // Ekran boyutuna göre 150-200 arası nokta oluştur
+
         for (let i = 0; i < 150; i++) {
             particles.push(new Particle());
         }
     }
 
-    // İki nokta arasına çizgi çizer
     function drawLines() {
-        let max_dist = 120; // Maksimum çizgi mesafesi
-        let mouse_dist = 200; // Fareye olan etki mesafesi
+        let max_dist = 120; 
+        let mouse_dist = 200; 
 
         for (let i = 0; i < particles.length; i++) {
             let p1 = particles[i];
@@ -80,7 +73,6 @@ if (!canvas) {
                 }
             }
         
-            // FARE BAĞLANTISI BURADA OLACAK ⬇⬇⬇
             let mouse_check_dist = Math.sqrt(Math.pow(p1.x - mouse.x, 2) + Math.pow(p1.y - mouse.y, 2));
             if (mouse_check_dist < mouse_dist) {
                 let opacity = 1 - (mouse_check_dist / mouse_dist);
@@ -95,27 +87,24 @@ if (!canvas) {
         }
     }
 
-    // Ana Animasyon Döngüsü
     function animateCanvas() {
         requestAnimationFrame(animateCanvas);
-        ctx.clearRect(0, 0, W, H); // Ekranı temizle
+        ctx.clearRect(0, 0, W, H); 
 
-        drawLines(); // Çizgileri çiz
+        drawLines(); 
 
         for (let i = 0; i < particles.length; i++) {
-            particles[i].update(); // Partikülleri hareket ettir
-            particles[i].draw(); // Partikülleri çiz
+            particles[i].update(); 
+            particles[i].draw(); 
         }
     }
 
-    // Event Listenerlar
     window.addEventListener('resize', initCanvas);
     canvas.addEventListener('mousemove', (e) => {
         mouse.x = e.clientX;
         mouse.y = e.clientY;
     });
 
-    // Başlangıç
     initCanvas();
     animateCanvas();
 }

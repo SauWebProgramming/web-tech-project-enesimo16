@@ -1,3 +1,5 @@
+/* CV icin tasarim */
+
 .cv-section {
     display: flex;
     flex-direction: column; 
@@ -60,7 +62,7 @@ a.btn-download:hover {
     font-weight: 600;
 }
 
-/* Dark Mode Ayarları */
+
 body.dark-mode .btn-download {
     background: linear-gradient(135deg, #38bdf8, #2563eb);
     box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);

@@ -9,9 +9,9 @@ const pages = {
     tr: {
         anasayfa: `
             <section class="home-section reveal text-center py-4">
-                <h1>Merhaba, Ben Enes Yel</h1>
+                <h1>Kişisel Portfolyo Sitesi</h1>
                 <h2 class="typewriter-wrapper">
-                    <span class="txt-type" data-wait="2000" data-words='["Bilişim Sistemleri Mühendisliği Öğrencisi", "Web Geliştirici", "Teknoloji Tutkunu"]'></span>
+                    <span class="txt-type" data-wait="2000" data-words='["Bilişim Sistemleri Mühendisliği Öğrencisi", "Web Geliştiricisi", "Yardımsever" ,"Melekin manitasi"]'></span>
                 </h2>
                 <br>
                 <small class="student-id">B23120053</small>
@@ -24,7 +24,7 @@ const pages = {
         hakkimda: `
             <section class="about-section reveal">
                 <h2>Hakkımda</h2>
-                <p>Merhaba! Ben Enes. Yazılım geliştirme tutkusu olan bir mühendislik öğrencisiyim. Disiplinler arası çalışmayı seviyorum; hem yazılım hem de donanım dünyasında kendimi geliştiriyorum.</p>
+                <p>Herkese merhaba, ben Enes Yel, Sakarya Üniversitesinde Bilişim Sistemleri Mühendisliği 2.sınıf öğrencisiyim. ÇAP kapsamında Makine mühendisliği, yandal tarafında ise bilgisayar donanımı okumaktayım.</p>
                 
                 <br>
                 <h3>Eğitim & Gelişim Süreci</h3>
@@ -87,6 +87,16 @@ const pages = {
                     <div class="skill-bar-container reveal">
                         <div class="skill-info">
                             <span>Web Frontend (HTML/CSS/JS)</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-bar-container reveal">
+                        <div class="skill-info">
+                            <span>Python</span>
                             <span>85%</span>
                         </div>
                         <div class="progress-bar">
@@ -160,9 +170,9 @@ const pages = {
     en: {
         anasayfa: `
             <section class="home-section reveal text-center py-4">
-                <h1>Hello, I'm Enes Yel</h1>
+                <h1>Personal Portfolio Site</h1>
                 <h2 class="typewriter-wrapper">
-                    <span class="txt-type" data-wait="2000" data-words='["ISE Student", "Web Developer", "Tech Enthusiast"]'></span>
+                    <span class="txt-type" data-wait="2000" data-words='["ISE Student", "Web Developer", "Philanthropist"]'></span>
                 </h2>
                 <br>
                 <small class="student-id">B23120053</small>
@@ -175,7 +185,7 @@ const pages = {
         hakkimda: `
             <section class="about-section reveal">
                 <h2>About Me</h2>
-                <p>Hello! I'm Enes. I am an engineering student with a passion for software development. I enjoy interdisciplinary work, improving myself in both software and hardware worlds.</p>
+                <p>Hello everyone, my name is Enes Yel, and I am a second-year student studying Computer Systems Engineering at Sakarya University. I am also studying Mechanical Engineering as part of the double major program and Computer Hardware as a minor.</p>
                 
                 <br>
                 <h3>Education & Experience</h3>
@@ -238,6 +248,16 @@ const pages = {
                     <div class="skill-bar-container reveal">
                         <div class="skill-info">
                             <span>Web Frontend (HTML/CSS/JS)</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar-container reveal">
+                        <div class="skill-info">
+                            <span>Python</span>
                             <span>85%</span>
                         </div>
                         <div class="progress-bar">

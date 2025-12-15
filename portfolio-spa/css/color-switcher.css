@@ -7,7 +7,6 @@
     --accent-color: #4f46e5;
 }
 
-/* Ana Tema Ayarları Konteyneri */
 .theme-settings {
     position: fixed;
     top: 30%;
@@ -32,7 +31,6 @@
     100% { transform: translateX(0); }
 }
 
-/* Ayarlar Butonu */
 .settings-btn {
     width: 50px;
     height: 50px;
@@ -65,7 +63,6 @@
     transform: translateX(-5px) scale(0.95);
 }
 
-/* Buton içindeki simge animasyonu */
 .settings-btn::before {
     content: '⚙️';
     animation: rotateIcon 3s linear infinite;
@@ -91,7 +88,6 @@
     50% { box-shadow: -6px 0 40px rgba(102, 126, 234, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.8); }
 }
 
-/* Tema Seçenekleri Paneli */
 .theme-options {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
     webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -109,7 +105,6 @@
     overflow: hidden;
 }
 
-/* Panel arkaplan dekorasyon */
 .theme-options::before {
     content: '';
     position: absolute;
@@ -127,7 +122,6 @@
     to { transform: rotate(360deg); }
 }
 
-/* Tema Çemberleri */
 .theme-circle {
     width: 40px;
     height: 40px;
@@ -142,7 +136,6 @@
     overflow: hidden;
 }
 
-/* Çember üzerine gelindiğinde parlama efekti */
 .theme-circle::before {
     content: '';
     position: absolute;
@@ -179,7 +172,6 @@
     animation: ripple 0.6s ease-out;
 }
 
-/* Ripple efekti */
 @keyframes ripple {
     0% {
         box-shadow: 
@@ -193,7 +185,6 @@
     }
 }
 
-/* Aktif Tema */
 .theme-circle.active {
     border-color: #333;
     border-width: 4px;
@@ -223,7 +214,6 @@
     }
 }
 
-/* Dark Mode Stilleri */
 body.dark-mode .settings-btn {
     background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
     border-color: rgba(255, 255, 255, 0.1);
@@ -267,7 +257,7 @@ body.dark-mode .theme-circle.active {
         0 0 20px rgba(102, 126, 234, 0.5);
 }
 
-/* Mevcut CSS Override'lar */
+/* override ediyoruz */
 body {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
     background-attachment: fixed !important;
@@ -342,7 +332,6 @@ body.dark-mode {
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
 }
 
-/* Dark Mode Vurguları */
 body.dark-mode .logo, 
 body.dark-mode h1, 
 body.dark-mode h2,
@@ -363,7 +352,6 @@ body.dark-mode .filter-btn {
     color: var(--primary-color) !important;
 }
 
-/* Responsive Optimizasyonlar */
 @media (max-width: 768px) {
     .theme-settings {
         top: 20%;

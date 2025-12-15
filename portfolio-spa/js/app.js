@@ -25,6 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             langBtn.innerText = currentLang.toUpperCase();
 
+            // TOAST BİLDİRİMİ
+            if(typeof Toast !== 'undefined') {
+                const msg = (currentLang === 'en') 
+                    ? 'Language Changed: English' 
+                    : 'Dil Değiştirildi: Türkçe';
+                
+                Toast.show(msg, 'info');
+            }
+
             router();
         });
     }

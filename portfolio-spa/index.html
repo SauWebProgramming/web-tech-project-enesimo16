@@ -15,67 +15,33 @@
     <meta property="og:image" content="assets/img/icon.png"> 
     <meta name="project" content="JavaScript ile SPA (Single Page Application) Portfolyo Sitesi">
     <meta name="teacher" content="Dr.Öğr.Üyesi Baran Kaynak">
+    <meta name="theme-color" content="#667eea">
 
 
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <!-- CSSLER ve KUTUPHANELER -->
     <link rel="stylesheet" href="css/theme.css">
     <link rel="stylesheet" href="css/form-validation.css">
     <link rel="stylesheet" href="css/filter.css">
-
     <link rel="stylesheet" href="css/base.css">        
     <link rel="stylesheet" href="css/layout.css">      
     <link rel="stylesheet" href="css/components.css">  
     <link rel="stylesheet" href="css/animations.css">
-
     <link rel="stylesheet" href="css/timeline.css">
     <link rel="stylesheet" href="css/cursor.css">
-
     <link rel="stylesheet" href="css/skill-bars.css">
-
     <link rel="stylesheet" href="css/cv.css">
     <link rel="stylesheet" href="css/back-to-top.css">
     <link rel="stylesheet" href="css/weather.css">
-
     <link rel="stylesheet" href="css/print.css" media="print">
-
     <link rel="stylesheet" href="css/terminal.css">
     <link rel="stylesheet" href="css/color-switcher.css">
-
     <link rel="stylesheet" href="css/toast.css">
 
-
-
-    <script src="js/canvas.js" defer></script>
-
-    <script src="js/pages.js" defer></script>
-    
-    <script src="js/theme.js" defer></script>
-    <script src="js/form-validation.js" defer></script>
-    <script src="js/filter.js" defer></script>
-    <script src="js/projects.js" defer></script>
-    <script src="js/typewriter.js" defer></script>
-    <script src="js/scrool-reveal.js" defer></script>
-
-    <script src="js/back-to-top.js" defer></script>
-    <script src="js/weather.js" defer></script>
-
-    <script src="js/card-tilted.js" defer ></script>
-    <script src="js/konami.js"defer></script>
-
-    <script src="js/app.js" defer></script>
-
-    <script src="js/terminal.js" defer></script>
-    <script src="js/color-switcher.js" defer></script>
-    
-    <script src="js/toast.js" defer></script>
-
-    <script src="js/audio.js" defer ></script>
-    <script src="js/notes.js"></script>
-
-
-
-
-
+    <!-- Site iconu. -->
+    <!-- PWA ve sito iconu. -->
+    <link rel="icon" type="image/png" href="assets/img/icon.png">
+    <link rel="manifest" href="pwa.json">
+    <link rel="apple-touch-icon" href="assets/img/icon.png">
 
 
     <!-- CSS ' de kullanmış olduğum inter fontu için gerekli dosyaları buraya koydum. --> 
@@ -83,17 +49,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"> <!-- Performans için swap. -->
 
+
+
+
+    <!-- SCRIPTLER ve KUTUPHANELER -->
+    <script src="js/canvas.js" defer></script>
+    <script src="js/pages.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/form-validation.js" defer></script>
+    <script src="js/filter.js" defer></script>
+    <script src="js/projects.js" defer></script>
+    <script src="js/typewriter.js" defer></script>
+    <script src="js/scrool-reveal.js" defer></script>
+    <script src="js/back-to-top.js" defer></script>
+    <script src="js/weather.js" defer></script>
+    <script src="js/card-tilted.js" defer ></script>
+    <script src="js/konami.js"defer></script>
+    <script src="js/app.js" defer></script>
+    <script src="js/terminal.js" defer></script>
+    <script src="js/color-switcher.js" defer></script>
+    <script src="js/toast.js" defer></script>
+    <script src="js/audio.js" defer ></script> 
+    <script src="js/notes.js"></script>
+ 
+
+
     <!-- konfeti kütüphanesi -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
-    <!-- Site iconu. -->
-    <link rel="icon" type="image/png" href="assets/img/icon.png">
-
-
-    <!-- PWA ve sito iconu. -->
-    <link rel="manifest" href="pwa.json">
-    <meta name="theme-color" content="#667eea">
-    <link rel="apple-touch-icon" href="assets/img/icon.png">
 
     <!-- EmailJS Kütüphanesi ve Başlatma Kodu -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -107,6 +89,8 @@
 
 
     <!--
+        BONUSLAMALAR
+
         PWA (Uygulama)
         Scroll Reveal
         Dil Desteği (TR/EN)
@@ -126,18 +110,18 @@
         ses efektleri
 
         best of bests - terminal 
-
-    
-    
     -->
+
+
 
 </head>
 <body>
     <canvas id="starfield"></canvas>
 
+    <!-- Navbar -->
     <header>
         <nav class="navbar">
-            <div class="logo">Enes Yel</div>
+            <div class="logo"><a href="#anasayfa">Enes Yel</a></div>
             <div class="nav-controls" style="display: flex; align-items: center; gap: 15px;">
                 <div class="hamburger" id="hamburger-btn">
                     <span></span>
@@ -159,9 +143,11 @@
         </nav>
     </header>
 
+    <!-- Govde -->
     <main id="app-container">
         </main>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Enes Yel - B231200053 - Bilişim Sistemleri Mühendisliği</p>
         <small>Bu site JavaScript ile oluşturulmuş bir SPA (Single Page Application) portfolyo sitesidir. 2025-2026 3.yarıyıl Web Teknolojileri Proje Ödevidir.</small><br> 
@@ -183,17 +169,20 @@
         <div class="curtain-panel right-panel"></div>
     </div>
 
-    <!-- custom cursor yapmaya calisiyoruz -->
+
+
+
+
+    <!-- Custom Cursor -->
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
 
-    <!-- Yukarı cikma back to top-->
+    <!-- Back To Top-->
     <button id="backToTop" class="back-to-top" aria-label="Yukarı Çık">
         ↑
     </button>
 
-    <!-- color switcher  set -->
-
+    <!-- Color Switcher -->
     <div class="theme-settings">
         <div class="settings-btn" id="settings-toggle">
 
@@ -209,8 +198,6 @@
             <div class="theme-circle" data-color="blue" style="background: #3b82f6;" title="Okyanus (Mavi)"></div>
         </div>
     </div>
-
-
 
     <!-- TERMINAL -->
     <button id="terminal-btn" class="terminal-toggle" aria-label="Terminali Aç">_></button>

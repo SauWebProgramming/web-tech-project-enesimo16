@@ -52,10 +52,8 @@ const AudioManager = {
             
            
             terminalBtn.insertAdjacentElement('afterend', muteBtn);
-            console.log("✅ Mute butonu Terminal butonunun yanına eklendi.");
         } else {
             document.body.appendChild(muteBtn);
-            console.log("✅ Mute butonu sayfaya eklendi.");
         }
     },
 

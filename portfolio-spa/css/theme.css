@@ -1,6 +1,5 @@
 /* Dark mode ve geçiş */
 
-/* Buton kısmı */
 .theme-btn {
     background: transparent;
     border: 2px solid #667eea;
@@ -22,7 +21,6 @@
     box-shadow: 0 0 15px rgba(102, 126, 234, 0.4); 
 }
 
-/* Perde */
 #curtain-overlay {
     position: fixed;
     top: 0;
@@ -43,8 +41,6 @@
     will-change: transform;
 }
 
-/*  Perde açıkken perdeleri saklama! */
-
 .left-panel {
     transform: translateX(-100%);
     border-right: 2px solid #667eea; 
@@ -57,7 +53,6 @@
     box-shadow: -5px 0 15px rgba(0,0,0,0.5);
 }
 
-/* Perde Kapalı iken perdeleri ortaya getirme! */
 #curtain-overlay.active .left-panel {
     transform: translateX(0);   
 }
@@ -67,7 +62,6 @@
     box-shadow: -10px 0 30px rgba(102, 126, 234, 0.4);
 }
 
-/* Dil Butonları */
 .lang-btn {
     background: transparent;
     border: 2px solid #667eea;
@@ -88,7 +82,6 @@
 }
 
 
-/* Typewriter efekti  */
 .txt-type > .txt-cursor {
     border-right: 2px solid #333; 
     animation: blink 0.7s infinite;
@@ -175,7 +168,7 @@ body.dark-mode .lang-btn:hover {
     color: #1e293b;
 }
 
-/*FILTER kısmı*/ 
+/*FILTER dark mode*/ 
 body.dark-mode .filter-btn {
     border-color: #f4a261;
     color: #f4a261;
@@ -183,7 +176,7 @@ body.dark-mode .filter-btn {
 
 body.dark-mode .filter-btn.active {
     background: #f4a261;
-    color: #1e293b; /* Yazı koyu olsun okunsun */
+    color: #1e293b; 
 }
 
 body.dark-mode .filter-btn:hover {
@@ -195,7 +188,6 @@ body.dark-mode .filter-btn:hover {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     body.dark-mode .nav-links {
         background: #0f172a;
@@ -215,10 +207,8 @@ body.dark-mode .txt-type > .txt-cursor {
 }
 
 
-
-/* Aktif Link Dark Mode */
 body.dark-mode .nav-links a.active-link {
-    color: #f4a261; /* Turuncu */
+    color: #f4a261; 
 }
 
 

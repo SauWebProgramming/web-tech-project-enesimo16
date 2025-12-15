@@ -25,7 +25,6 @@ function initKonamiCode() {
 }
 
 function fireConfetti() {
-    console.log("🎮 ENES KODU AKTİF! TEBRİKLER!");
 
     if (navigator.vibrate) navigator.vibrate(200);
 

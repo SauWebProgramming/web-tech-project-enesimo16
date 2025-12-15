@@ -19,8 +19,6 @@
 }
 
 
-
-
 .project-card:hover,
 .skill-card:hover {
     /*  transform: translateY(-10px) scale(1.02); geçici olarak devre disi aliyorum cünkü hata veriyor */
@@ -28,14 +26,12 @@
     border-color: rgba(79, 70, 229, 0.3);
 }
 
-
-
 .project-card img {
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
-/* Grid kullanılarak kolaylaştırıldı hem de projede grid de kullanmış olmak için kullandım. */
 
+/* Grid kullanılarak kolaylaştırıldı hem de projede grid de kullanmış olmak için kullandım. */
 .projects-grid,
 .skills-grid {
     display: grid;
@@ -43,9 +39,6 @@
     gap: 2.5rem;
     margin-top: 3rem;
 }
-
-
-/* Butonlar */
 
 .btn {
 
@@ -81,13 +74,11 @@
 
 }
 
-
 .text-center { text-align: center; }
 .py-4 { padding: 4rem 0; }
 .mt-2 { margin-top: 2rem; }
 .w-100 { width: 100%; }
 .mx-auto-600 { max-width: 600px; margin: 0 auto; }
-
 
 .typewriter-wrapper {
 
@@ -159,13 +150,11 @@
     border-color: #4f46e5;
 }
 
-/* Aktif link durumu */
 .nav-links a.active-link {
     color: #667eea;
     font-weight: bold;
 
 }
-
 
 .nav-links a.active-link::before {
     width: 100%;

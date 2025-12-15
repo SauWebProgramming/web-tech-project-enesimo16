@@ -21,7 +21,7 @@ function initColorSwitcher() {
         blue:   { primary: '#3b82f6', secondary: '#2563eb' }
     };
 
-    // Fonksiyona 'showToast' parametresi eklendi (Varsayılan: true)
+    // Fonksiyona 'showToast' parametresi ile true eklendi.
     const setThemeColor = (colorName, showToast = true) => {
         const theme = themes[colorName];
         if (theme) {
@@ -41,7 +41,6 @@ function initColorSwitcher() {
             if(showToast && typeof Toast !== 'undefined') {
                 
                 const displayColor = colorName.charAt(0).toUpperCase() + colorName.slice(1);
-                
                 
                 const msg = (typeof currentLang !== 'undefined' && currentLang === 'en') 
                     ? `Theme Changed: ${displayColor} `

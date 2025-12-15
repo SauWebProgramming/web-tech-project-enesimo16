@@ -15,8 +15,8 @@
     "title_en": "ENVENT - Event Application",
     "description": "C#, .NET Core MVC ve Razor Pages kullanılarak geliştirilen kapsamlı etkinlik yönetim platformu. Biletleme, katılımcı takibi ve organizasyon modülleri içerir.",
     "description_en": "Comprehensive event management platform developed using C#, .NET Core MVC, and Razor Pages. Includes ticketing, attendee tracking, and organization modules.",
-    "image": "https://via.placeholder.com/600x400/ec4899/ffffff?text=ENVENT+App",
-    "link": "#",
+    "image": "assets/envent.png",
+    "link": "https://github.com/SauWebProgramming/web-programming-project-2025-enesimo16",
     "category": "web"
   },
   {
@@ -25,8 +25,8 @@
     "title_en": "Linux System Monitor Tool",
     "description": "Linux sunuculardaki sistem kaynaklarını (CPU, RAM, Disk) ve log verilerini anlık olarak analiz edip görselleştiren izleme uygulaması.",
     "description_en": "Monitoring application that analyzes and visualizes system resources (CPU, RAM, Disk) and log data on Linux servers in real-time.",
-    "image": "https://via.placeholder.com/600x400/10b981/ffffff?text=Linux+Monitor",
-    "link": "#",
+    "image": "assets/linux.png",
+    "link": "https://github.com/SauWebProgramming/linux-script-project-enesimo16",
     "category": "masaustu"
   },
   {
@@ -45,7 +45,7 @@
     "title_en": "Tower Defense Game",
     "description": "C# ve Windows Forms kullanılarak geliştirilen strateji tabanlı masaüstü oyunu. Nesne Yönelimli Programlama (OOP) prensipleri etkin bir şekilde kullanılmıştır.",
     "description_en": "Strategy-based desktop game developed using C# and Windows Forms. Object-Oriented Programming (OOP) principles were used effectively.",
-    "image": "assets/img/towerdefensegame.png",
+    "image": "assets/ww2.png",
     "link": "#",
     "category": "masaustu"
   },
@@ -55,8 +55,8 @@
     "title_en": "Virtual Library System",
     "description": "C++ ve OOP prensipleri kullanılarak tasarlanan, kitap takibi, ödünç alma ve üye yönetimini sağlayan kütüphane otomasyonu.",
     "description_en": "Library automation designed using C++ and OOP principles, providing book tracking, borrowing, and member management.",
-    "image": "https://via.placeholder.com/600x400/3b82f6/ffffff?text=C%2B%2B+Library",
-    "link": "#",
+    "image": "assets/sanal.png",
+    "link": "https://github.com/enesimo16/virtual-library-application",
     "category": "masaustu"
   },
   {
@@ -65,8 +65,8 @@
     "title_en": "Logistics Planning Algorithm",
     "description": "C++ ile geliştirilen, depo yönetimi ve nakliye rotalarını optimize eden, maliyet hesaplaması yapan lojistik planlama aracı.",
     "description_en": "Logistics planning tool developed with C++, optimizing warehouse management and shipping routes, performing cost calculations.",
-    "image": "https://via.placeholder.com/600x400/8b5cf6/ffffff?text=Logistics+C%2B%2B",
-    "link": "#",
+    "image": "assets/lojistik.png",
+    "link": "https://github.com/enesimo16/logistics-planning",
     "category": "masaustu"
   },
   {
@@ -75,8 +75,8 @@
     "title_en": "Order Management System",
     "description": "Python kullanılarak oluşturulan, müşteri siparişlerini işleyen, stok takibi yapan ve sipariş durumunu yöneten backend odaklı sistem.",
     "description_en": "Backend-focused system created using Python that processes customer orders, tracks inventory, and manages order status.",
-    "image": "https://via.placeholder.com/600x400/6366f1/ffffff?text=Order+Management",
-    "link": "#",
+    "image": "assets/order.png",
+    "link": "https://github.com/enesimo16/tritat-order-manager",
     "category": "masaustu"
   },
   {
@@ -85,8 +85,8 @@
     "title_en": "ATM Application",
     "description": "Python ile geliştirilen, kullanıcı girişi, bakiye sorgulama, para yatırma ve çekme işlemlerini simüle eden konsol tabanlı bankacılık uygulaması.",
     "description_en": "Console-based banking application developed with Python, simulating user login, balance inquiry, deposit, and withdrawal transactions.",
-    "image": "https://via.placeholder.com/600x400/14b8a6/ffffff?text=Python+ATM",
-    "link": "#",
+    "image": "assets/atm.png",
+    "link": "https://github.com/enesimo16/atm-application",
     "category": "masaustu"
   }
 ]

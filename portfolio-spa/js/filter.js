@@ -13,10 +13,10 @@ function setupFilters() {
 
             cards.forEach(card => {
                 if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                    card.style.display = 'block'; // Göster
+                    card.style.display = 'block'; 
                     card.style.animation = 'fadeIn 0.5s ease';
                 } else {
-                    card.style.display = 'none'; // Gizle
+                    card.style.display = 'none'; 
                 }
             });
         });

@@ -11,7 +11,6 @@ function initTerminal() {
     const bodyDiv = document.getElementById('terminal-body');
 
     if (!modal || !openBtn || !input) { 
-        console.error("HATA: Terminal elementleri bulunamadı!"); 
         return; 
     }
 
@@ -120,6 +119,8 @@ function initTerminal() {
                     <div>✅ Konami Code (Klavyeden 'enes' yaz)</div>
                     <div>✅ Skeleton Loading & Custom Cursor</div>
                     <div>✅ Canvas İnteraktif Arkaplan</div>
+                    <div>✅ Audio Etkileşimli Sesler</div>
+                    <div>✅ Toast Bildirimleri</div>
                     <br>
                     <div class="cmd-success" style="font-weight:bold;">★ Best of Bests - TERMINAL CLI ★</div>
                 `;

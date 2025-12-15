@@ -1,3 +1,6 @@
+// PWA
+
+
 const CACHE_NAME = 'enes-portfolio-v1';
 const ASSETS_TO_CACHE = [
     './',
