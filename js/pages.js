@@ -11,7 +11,7 @@ const pages = {
             <section class="home-section reveal text-center py-4">
                 <h1>Kişisel Portfolyo Sitesi</h1>
                 <h2 class="typewriter-wrapper">
-                    <span class="txt-type" data-wait="2000" data-words='["Bilişim Sistemleri Mühendisliği Öğrencisi", "Web Geliştiricisi", "Yardımsever" ,"Melekin manitasi"]'></span>
+                    <span class="txt-type" data-wait="2000" data-words='["Bilişim Sistemleri Mühendisliği Öğrencisi", "Web Geliştiricisi", "Yardımsever"]'></span>
                 </h2>
                 <br>
                 <small class="student-id">B23120053</small>

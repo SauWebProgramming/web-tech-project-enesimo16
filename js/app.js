@@ -57,6 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+
+
+    
     // SAYFAYI DİNAMİK YAPMA, YÖNLENDİRME
     async function router() {
         const appContainer = document.getElementById('app-container');
