@@ -1,176 +1,152 @@
-Kişisel SPA Portfolyo Projesi
+# 🚀 Kişisel SPA Portfolyo Projesi
 
-Selamlar! Ben Enes Yel. Sakarya Üniversitesi Bilişim Sistemleri Mühendisliği öğrencisiyim. Bu projeyi, "Web Teknolojileri" dersi kapsamında öğrendiklerimi pratiğe dökmek ve modern web geliştirme becerilerimi sergilemek için hazırladım.
+Merhaba! Ben **Enes Yel**, Sakarya Üniversitesi **Bilişim Sistemleri Mühendisliği** öğrencisiyim. Bu proje, **Web Teknolojileri** dersi kapsamında öğrendiklerimi gerçek bir ürün disiplininde uygulamak ve modern web geliştirme yetkinliklerimi sergilemek amacıyla geliştirilmiştir.
 
-Amacım sadece çalışan bir site yapmak değil; hazır kütüphanelere (React, Vue vb.) kaçmadan, işin mutfağını öğrenerek Single Page Application (SPA) mimarisini sıfırdan kurmaktı. Proje, sadece statik bir CV değil, kullanıcıyla etkileşime giren, yaşayan bir web uygulamasıdır.
+Bu çalışma, basit bir statik CV sayfası değildir. Herhangi bir hazır framework (React, Vue vb.) kullanmadan, **Single Page Application (SPA)** mimarisini **sıfırdan** inşa etmeyi hedefleyen; etkileşimli, yaşayan ve genişletilebilir bir web uygulamasıdır.
 
-Canlı Demo: https://sauwebprogramming.github.io/web-tech-project-enesimo16/
+🔗 **Canlı Demo:** [https://sauwebprogramming.github.io/web-tech-project-enesimo16/](https://sauwebprogramming.github.io/web-tech-project-enesimo16/)
 
-Projenin Amacı ve Hikayesi
+---
 
-Bu projeye başlarken kendime şu hedefi koydum: "Herhangi bir framework kullanmadan, sadece JavaScript'in gücüyle modern, hızlı ve uygulama hissi veren bir site yapabilir miyim?"
+## 🎯 Projenin Amacı ve Yaklaşımı
 
-Sonuç olarak; sayfa yenilenmeden gezilebilen, verilerini dinamik çeken ve telefona uygulama gibi kurulabilen bu portfolyo ortaya çıktı. Hem tasarım hem de kodlama aşamalarında temiz, sürdürülebilir ve modüler bir yapı kurmaya özen gösterdim.
+Projeye başlarken kendime net bir hedef koydum:
 
-Proje İsterleri ve Karşılanma Durumu
+> *"Sadece saf JavaScript kullanarak, modern, hızlı ve uygulama hissi veren bir SPA geliştirebilir miyim?"*
 
-Aşağıdaki tablo, proje ödevinde belirtilen zorunlu gereksinimlerin projede nasıl ve hangi tekniklerle karşılandığını özetlemektedir.
+Bu doğrultuda;
 
-Zorunlu İster (Kriter)
+* Sayfa yenilenmeden çalışan bir mimari kuruldu,
+* Dinamik veri yönetimi sağlandı,
+* Mobil cihazlara **uygulama gibi kurulabilen (PWA)** bir yapı geliştirildi.
 
-Projedeki Uygulama / Karşılığı
+Kod kalitesi, sürdürülebilirlik ve modülerlik temel önceliklerim oldu.
 
-Durum
+---
 
-Single Page Application (SPA)
+## ✅ Zorunlu Proje İsterleri – Teknik Karşılıklar
 
-js/app.js içerisindeki özel Router yapısı ile sayfa yenilenmeden içerik yönetimi sağlanmıştır.
+Aşağıda, ödev kapsamında talep edilen tüm zorunlu isterlerin **nasıl** ve **hangi tekniklerle** karşılandığı net ve bozulmaya dayanıklı bir yapı ile sunulmuştur:
 
-Tamamlandı
+### 🔹 SPA Mimarisi
 
-Fetch API Kullanımı
+* `js/app.js` içerisinde geliştirilen **özel Router** yapısı
+* Hash tabanlı yönlendirme ile **tamamen sayfa yenilemesiz** gezinme
 
-Projeler projects.json dosyasından, hava durumu verisi ise Open-Meteo API'den fetch ile asenkron çekilmektedir.
+### 🔹 Fetch API Kullanımı
 
-Tamamlandı
+* Proje verileri: `data/projects.json`
+* Canlı veriler: **Open-Meteo API** (hava durumu & saat)
+* Asenkron veri yönetimi ve loading state kontrolü
 
-LocalStorage Kullanımı
+### 🔹 LocalStorage Entegrasyonu
 
-Tema tercihi (Karanlık/Aydınlık), dil seçimi (TR/EN), ses ayarları ve not defteri verileri tarayıcı hafızasında saklanmaktadır.
+* Tema (Dark / Light)
+* Dil seçimi (TR / EN)
+* Renk teması
+* Ses ayarları
+* Not defteri (CRUD)
 
-Tamamlandı
+### 🔹 Responsive Tasarım
 
-Responsive Tasarım
+* CSS Grid & Flexbox tabanlı yapı
+* Mobil uyumlu layout
+* Özel Hamburger Menü
 
-Mobil uyumlu Grid yapısı, esnek görseller ve özel Hamburger Menü ile tüm cihazlarda uyumlu görünüm sağlanmıştır.
+### 🔹 Form Validasyonu
 
-Tamamlandı
+* JavaScript + Regex ile
 
-Form Validasyonu
+  * Boş alan kontrolü
+  * E-posta format doğrulaması
 
-İletişim formunda JavaScript (Regex) ile e-posta ve boş alan kontrolü yapılmaktadır.
+### 🔹 Harici API Kullanımı
 
-Tamamlandı
+* Open-Meteo API ile **canlı hava durumu ve saat bilgisi**
 
-Harici API Entegrasyonu
+### 🔹 Modüler Kodlama
 
-Footer bölümünde Open-Meteo API kullanılarak canlı hava durumu ve saat verisi gösterilmektedir.
+* JavaScript ve CSS dosyaları **işlevlerine göre ayrılmıştır**
+* Spagetti koddan kaçınılmıştır
 
-Tamamlandı
+### 🔹 Semantic HTML
 
-Modüler Kod Yapısı
+* `<header>`, `<nav>`, `<main>`, `<article>`, `<footer>` gibi anlamsal etiketler
 
-JavaScript ve CSS kodları, işlevlerine göre ayrı dosyalara (utils.js, projects.js, layout.css vb.) bölünmüştür.
+> ✔️ Tüm zorunlu isterler eksiksiz ve işlevsel biçimde tamamlanmıştır.
 
-Tamamlandı
+---
 
-Semantic HTML
+## ⭐ Öne Çıkan Özellikler ve Bonus Geliştirmeler
 
-<header>, <nav>, <main>, <article>, <footer> gibi anlamsal etiketler kullanılmıştır.
+Bu proje, standart gereksinimlerin ötesine geçerek ileri seviye ve **bonus** nitelikli birçok özellik içermektedir.
 
-Tamamlandı
+### ⚡ Advanced & Bonus Özellikler
 
-Öne Çıkan Özellikler ve Bonuslar
+* **PWA (Progressive Web App)**
 
-Bu proje, standart ödev gereksinimlerinin ötesine geçerek, aşağıdaki ileri seviye özellikleri ve Bonus niteliğindeki geliştirmeleri içerir:
+  * Offline çalışma (Service Worker & Cache)
+  * Mobil ve masaüstüne kurulabilir yapı
 
-Bonus Özellikler (Advanced Features)
+* **Terminal (CLI) Modu**
 
-PWA (Progressive Web App):
+  * Site içinde çalışan interaktif terminal
+  * `help`, `whoami`, `projects` ve gizli bonus komutlar
 
-manifest.json ve pwa-sw.js (Service Worker) entegrasyonu sayesinde site, mobil ve masaüstü cihazlara yerel bir uygulama gibi kurulabilir.
+* **HTML5 Canvas Arka Plan**
 
-Çevrimdışı (offline) durumda bile temel sayfalar önbellekten (cache) çalışmaya devam eder.
+  * Fare hareketine duyarlı, interaktif network efekti
 
-Terminal (CLI) Modu:
+* **3D Tilt & Parallax Efekti**
 
-Site içinde çalışan interaktif bir hacker terminali! (Sol alttaki _> butonu ile açılır).
+  * Proje kartlarında fareye duyarlı 3D eğilme
 
-Ziyaretçiler help, whoami, projects ve gizli bonus komutuyla siteyi gezebilir.
+* **Konami Code (Easter Egg)**
 
-Canlı Hava Durumu API:
+  * Klavyeden `e-n-e-s` yazıldığında konfeti animasyonu 🎉
 
-Footer kısmında Open-Meteo API kullanılarak çekilen anlık hava durumu ve saat verisi.
+* **Print (Yazdırma) Modu**
 
-Bu özellik, sadece statik JSON verisi değil, Harici API kullanımını da kanıtlar.
+  * `CTRL + P` ile sade, profesyonel CV çıktısı
 
-Canvas İnteraktif Arka Plan:
+* **Renk Teması Seçici**
 
-HTML5 Canvas ile çizilen, fare hareketine duyarlı ve birbirine bağlanan "Network Ağı" efekti.
+  * Ana renk tercihi (Mor, Yeşil, Turuncu, Mavi)
+  * LocalStorage ile kalıcı ayar
 
-3D Tilt Efekti:
+* **Skeleton Loading**
 
-Proje kartlarının üzerine gelindiğinde fareye doğru 3 boyutlu eğilmesi (Parallax etkisi).
+  * Fetch süresince modern iskelet ekran
 
-Konami Code (Easter Egg):
+* **Toast Bildirimleri**
 
-Klavyeden e-n-e-s yazıldığında ekranda sürpriz konfeti patlaması!
+  * Kullanıcı aksiyonlarına görsel geri bildirim
 
-Yazdırma Dostu Tasarım (Print CSS):
+* **Ses Efektleri & Cyber Audio**
 
-CTRL + P yapıldığında site, gereksiz görsellerden ve renklerden arınarak temiz bir CV kağıt formatına dönüşür.
+  * Etkileşimli ses deneyimi ve kontrol paneli
 
-Renk Teması Seçici (Color Switcher):
+---
 
-Kullanıcının site ana rengini (Mor, Yeşil, Turuncu, Mavi) değiştirebilmesi ve bu tercihin localStorage ile saklanması.
+## 🧩 Temel Teknik Özellikler
 
-Custom Cursor:
+* SPA mimarisi (hash-based routing)
+* Dinamik içerik yönetimi
+* Çoklu dil desteği (TR / EN)
+* Dark / Light tema
+* Scroll Reveal animasyonları
+* Typewriter efektleri
+* Scroll progress & Back-to-top
+* CV indirme ve QR kod alanı
+* Mobil uyumlu tasarım
 
-Site genelinde fareyi takip eden özel imleç ve hover efektleri (Sadece masaüstünde aktif).
+---
 
-Skeleton Loading:
+## 🏗️ Teknik Mimari ve Dosya Yapısı
 
-Veriler yüklenirken (Fetch süresince) kullanıcıya YouTube benzeri modern iskelet yükleme ekranı gösterilmesi.
+Proje, sürdürülebilir ve okunabilir bir mimari üzerine kurulmuştur.
 
-Toast Bildirimleri:
-
-İşlemler (form gönderimi, tema değişimi vb.) sonucunda sağ üstten gelen modern bildirim balonları.
-
-Ses Efektleri & Cyber Audio:
-
-Buton tıklamaları, bildirimler ve özel "Ses Tüpü" ile etkileşimli ses deneyimi.
-
-Temel Teknik Özellikler (Core Requirements)
-
-SPA Mimarisi: Sayfa yenilenmeden hızlı geçişler sağlayan özel Router yapısı (hash tabanlı yönlendirme).
-
-Dinamik İçerik: Projeler statik HTML değil, projects.json dosyasından Fetch API ile asenkron olarak çekilir.
-
-Çoklu Dil Desteği (TR/EN): Tek tıkla İngilizce/Türkçe geçişi ve tercihin localStorage ile hatırlanması.
-
-Karanlık Mod (Dark/Light Theme): Göz yormayan tema seçenekleri ve tercihin hafızada tutulması.
-
-Scroll Reveal: Sayfa aşağı kaydırıldıkça içeriklerin animasyonlu olarak (Fade-in/Slide-up) yüklenmesi.
-
-Typewriter Efekti: Anasayfada kendini yazıp silen dinamik unvan animasyonu.
-
-Scroll Progress & Back to Top: Sayfanın ne kadarının okunduğunu gösteren üst çubuk ve hızlı yukarı çıkma butonu.
-
-CV İndir & QR Kod: Profesyonel erişim için PDF indirme butonu ve mobil QR kod alanı.
-
-Responsive Tasarım: Mobil uyumlu Grid yapısı ve özel Hamburger Menü ile her ekranda kusursuz görünüm.
-
-Form Validasyonu: JavaScript ve Regex ile güvenli iletişim formu kontrolü.
-
-Teknik Mimari ve Kod Yapısı
-
-Proje, sürdürülebilirlik ve okunabilirlik için modüler bir dosya yapısı üzerine kurulmuştur. Spagetti koddan kaçınılmış, her işlev ayrı bir dosyada yönetilmiştir.
-
-Kullanılan Teknolojiler
-
-Frontend: HTML5, CSS3 (Grid/Flexbox/Animations), JavaScript (ES6+)
-
-Veri: JSON (Yerel Veri Tabanı Simülasyonu)
-
-API: Open-Meteo (Hava Durumu), EmailJS (İletişim Formu)
-
-Araçlar: Git, VS Code, Google Fonts (Inter)
-
-Kütüphaneler: Canvas Confetti (Sadece Easter Egg için minimal kullanım)
-
-Dosya Yapısı ve İşlevleri
-
-portfolio-spa/
+```portfolio-spa/
 │
 ├── css/                     # TASARIM KATMANI
 │   ├── base.css             # Temel ayarlar, reset, Canlı Arkaplan
@@ -223,18 +199,30 @@ portfolio-spa/
 ├── index.html               # Ana Giriş Noktası
 └── pwa-sw.js                # PWA Service Worker (Çevrimdışı Çalışma)
 
+```
+
+---
+
+## 🛠️ Kullanılan Teknolojiler
+
+* **Frontend:** HTML5, CSS3, JavaScript (ES6+)
+* **Veri:** JSON
+* **API:** Open-Meteo, EmailJS
+* **Araçlar:** Git, VS Code
+* **Font:** Google Fonts – Inter
+
+---
 
 
-Geliştirici
 
-Ad Soyad: Enes Yel
+##  Geliştirici Bilgileri
 
-Bölüm: Bilişim Sistemleri Mühendisliği
+* **Ad Soyad:** Enes Yel
+* **Bölüm:** Bilişim Sistemleri Mühendisliği
+* **Numara:** B23120053
+* **Ders:** Web Teknolojileri
+* **Öğretim Üyesi:** Dr. Öğr. Üyesi Baran Kaynak
 
-Numara: B23120053
+---
 
-Ders: Web Teknolojileri
-
-Öğretim Üyesi: Dr. Öğr. Üyesi Baran Kaynak
-
-© 2025 - Tüm Hakları Saklıdır.
+© 2025 – Tüm Hakları Saklıdır
