@@ -122,15 +122,15 @@ Bu proje, standart gereksinimlerin ötesine geçerek ileri seviye ve **bonus** n
 
   * Kullanıcı aksiyonlarına görsel geri bildirim
 
-* **Ses Efektleri **
+* **Ses Efektleri**
 
   * Etkileşimli ses deneyimi ve kontrol paneli
  
-* **Weather **
+* **Weather**
 
   * Hem yerel hem harici api ile fetch çekerek anlık hava durumu
 
-* **Cursor **
+* **Cursor**
 
   * UI arttıracak şekilde özel cursor
  
@@ -138,7 +138,7 @@ Bu proje, standart gereksinimlerin ötesine geçerek ileri seviye ve **bonus** n
 
   * LocalStorage ile dark tema
 
-* **Back To Top Butonu **
+* **Back To Top Butonu**
 
   * SAyfanın sonundan başına gitme animasyonu
 ---
