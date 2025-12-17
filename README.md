@@ -122,10 +122,25 @@ Bu proje, standart gereksinimlerin ötesine geçerek ileri seviye ve **bonus** n
 
   * Kullanıcı aksiyonlarına görsel geri bildirim
 
-* **Ses Efektleri & Cyber Audio**
+* **Ses Efektleri **
 
   * Etkileşimli ses deneyimi ve kontrol paneli
+ 
+* **Weather **
 
+  * Hem yerel hem harici api ile fetch çekerek anlık hava durumu
+
+* **Cursor **
+
+  * UI arttıracak şekilde özel cursor
+ 
+* **Dark Tema**
+
+  * LocalStorage ile dark tema
+
+* **Back To Top Butonu **
+
+  * SAyfanın sonundan başına gitme animasyonu
 ---
 
 ## 🧩 Temel Teknik Özellikler
@@ -139,6 +154,12 @@ Bu proje, standart gereksinimlerin ötesine geçerek ileri seviye ve **bonus** n
 * Scroll progress & Back-to-top
 * CV indirme ve QR kod alanı
 * Mobil uyumlu tasarım
+* Ses efektleri
+* Custom cursor
+* Back top Top
+* Toastr bildirimleri
+* 3D tlit efektleri
+* Konami Code ( enes )
 
 ---
 
@@ -219,10 +240,7 @@ Proje, sürdürülebilir ve okunabilir bir mimari üzerine kurulmuştur.
 
 * **Ad Soyad:** Enes Yel
 * **Bölüm:** Bilişim Sistemleri Mühendisliği
-* **Numara:** B23120053
+* **Numara:** B231200053
 * **Ders:** Web Teknolojileri
 * **Öğretim Üyesi:** Dr. Öğr. Üyesi Baran Kaynak
 
----
-
-© 2025 – Tüm Hakları Saklıdır
