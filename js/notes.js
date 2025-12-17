@@ -10,6 +10,7 @@ function loadNotesPage() {
     const btnText = isEn ? 'Add Note' : 'Not Ekle';
     const noNoteText = isEn ? 'No notes yet.' : 'Henüz not eklenmemiş.';
 
+    // DOMA BASMA DETAYLI BİR SEKİLDE EN KAPSAMLI
     let html = `
         <div style="animation: fadeInDown 0.6s ease;">
             <h2 class="text-center" style="color: var(--text-primary, #333); font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.1);">
@@ -79,7 +80,7 @@ function renderNotes() {
     const notesGrid = document.getElementById('notes-grid');
     const noNoteMsg = document.getElementById('no-notes-msg');
     
-    const notes = JSON.parse(localStorage.getItem('myPortfolioNotes')) || [];
+    const notes = JSON.parse(localStorage.getItem('myPortfolioNotes')) || []; // LOCALSTORAGE
 
     if (notes.length === 0) {
         notesGrid.innerHTML = '';

@@ -1,4 +1,4 @@
-let currentLang = localStorage.getItem('lang') || 'tr'; // Varsayılan türkçe
+let currentLang = localStorage.getItem('lang') || 'tr'; // Varsayılan türkçe LOCALSTORAGE
 
 
 document.addEventListener('DOMContentLoaded', () => {

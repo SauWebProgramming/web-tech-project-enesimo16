@@ -2,7 +2,7 @@
 
 const AudioManager = {
     sounds: {},
-    isMuted: localStorage.getItem('siteMuted') === 'true', 
+    isMuted: localStorage.getItem('siteMuted') === 'true',  // LOCALSTORAGE
 
     init() {
         this.sounds = {

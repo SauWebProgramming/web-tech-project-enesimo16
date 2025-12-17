@@ -58,7 +58,7 @@ function initColorSwitcher() {
         });
     });
 
-    const savedColor = localStorage.getItem('siteColor') || 'purple';
+    const savedColor = localStorage.getItem('siteColor') || 'purple';   /// LOCALSTORAGE
     setThemeColor(savedColor, false); // Sayfa ilk açıldığında bildirim gösterme
 }
 

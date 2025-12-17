@@ -24,6 +24,8 @@ function setupContactForm() {
             const errMsgLength = (typeof currentLang !== 'undefined' && currentLang === 'en') ? 'Message must be at least 10 characters.' : 'Mesajınız en az 10 karakter olmalıdır.';
             // successMsg değişkeni EmailJS başarılı olursa kullanılacak
 
+
+            // BINDING
             if (nameInput.value.trim() === '') {
                 setError(nameInput, errName);
                 isValid = false;

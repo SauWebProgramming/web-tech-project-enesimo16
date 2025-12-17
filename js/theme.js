@@ -6,7 +6,7 @@ const curtainOverlay = document.getElementById('curtain-overlay');
 const body = document.body;
 
 
-const currentTheme = localStorage.getItem('theme');
+const currentTheme = localStorage.getItem('theme'); // LOCALSTORAGE
 if (currentTheme === 'dark') {
     body.classList.add('dark-mode');
     themeBtn.innerHTML = '☀️';

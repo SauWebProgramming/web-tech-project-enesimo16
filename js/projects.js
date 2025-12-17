@@ -34,6 +34,7 @@ async function loadProjects() {
         </style>
     `;
 
+    // ASENKROM WAIT KULLANIMI
     await new Promise(r => setTimeout(r, 1500)); 
 
     try {
